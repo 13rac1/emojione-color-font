@@ -1,0 +1,3 @@
+[submodule "assets/emojione"]
+	path = assets/emojione
+	url = https://github.com/Ranks/emojione.git
