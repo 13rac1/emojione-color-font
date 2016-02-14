@@ -17,14 +17,15 @@ EmojiOne-SVGinOT.ttf: build $(SVG_TRACE_FILES)
 
 # Create black SVG traces of the color SVGs to use as glyphs.
 # 1. Make the EmojiOne SVG into a PNG with Inkscape
-# 2. Make the PNG into a BMP with ImageMagick
+# 2. Make the PNG into a BMP with ImageMagick and add margin by increasing the
+#    canvas size to allow the outer "stroke" to fit.
 # 3. Make the BMP into a Edge Detected PGM with mkbitmap
 # 4. Make the PGM into a black SVG trace with potrace
 build/svg-trace/%.svg: $(SVG_SOURCE)/%.svg
 	inkscape -w 1000 -h 1000 -z -e $(TMP)/$(*F).png $<
-	convert $(TMP)/$(*F).png $(TMP)/$(*F).bmp
+	convert $(TMP)/$(*F).png -gravity center -background xc:transparent -extent 1066x1066 $(TMP)/$(*F).bmp
 	rm $(TMP)/$(*F).png
-	mkbitmap -g -s1 -f 10 -o $(TMP)/$(*F).pgm $(TMP)/$(*F).bmp
+	mkbitmap -g -s 1 -f 10 -o $(TMP)/$(*F).pgm $(TMP)/$(*F).bmp
 	rm $(TMP)/$(*F).bmp
 	potrace -s --height 1000pt --width 1000pt -o $@ $(TMP)/$(*F).pgm
 	rm $(TMP)/$(*F).pgm
