@@ -91,10 +91,10 @@ only recently learned how to do all of this. So, it may be terribly wrong.* 😋
 * License: MIT
 * Complete Legal Terms: http://opensource.org/licenses/MIT
 
-
 ### Emoji One License
 The SVG files of the [Emoji One](http://emojione.com/) project are modified to
 create the fallback emoji glyphs and used as-is for the SVGinOT color glyphs.
+Files are stored in `assets/emojione-svg`.
 
 * Source: https://github.com/Ranks/emojione
 * Art License: Creative Commons Attribution 4.0 International

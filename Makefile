@@ -11,7 +11,7 @@ TMP := /tmp
 #TMP := /dev/shm
 
 # There are two SVG source directories to keep the emojione assets separate.
-SVG_EMOJIONE := assets/emojione/assets/svg
+SVG_EMOJIONE := assets/emojione-svg
 SVG_MORE := assets/svg
 
 # Create the lists of traced and color SVGs
