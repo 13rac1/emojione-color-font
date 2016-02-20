@@ -1,29 +1,30 @@
 # EmojiOne SVGinOT Font
 A color and B&W Emoji SVGinOT font built primarily from [Emoji One][1] artwork
-including full support for [skin tone modifiers][2] and [country flags][3].
+including full support for [ZWJ][2] [skin tone modifiers][3] and [country flags][4].
 
 The font works in all operating systems, but will *currently* show color
 emoji in Mozilla Firefox and Mozilla Thunderbird only. Regular B&W Emoji are
-included for backwards compatibility everywhere else.
+generated for backwards compatibility in other applications.
 
 [1]: http://emojione.com/
-[2]: http://www.unicode.org/reports/tr51/#Diversity
-[3]: http://www.unicode.org/reports/tr51/#Flags
+[2]: http://unicode.org/emoji/charts/emoji-zwj-sequences.html
+[3]: http://www.unicode.org/reports/tr51/#Diversity
+[4]: http://www.unicode.org/reports/tr51/#Flags
 
 ## Examples
 
 ## What is SVGinOT?
 *SVG in Open Type* is the new standard for color OpenType and Open Font Format
-fonts [adopted by the W3C on January 27th 2016][4] created by Adobe and Mozilla.
+fonts [adopted by the W3C on January 27th 2016][5] created by Adobe and Mozilla.
 It allows font creators to embed complete SVG files within a font enabling full
-color and even animations. There are more details in the [SVGinOT proposal][5].
+color and even animations. There are more details in the [SVGinOT proposal][6].
 
 SVGinOT Demos (Firefox only):
 * https://www.adobe.com/devnet-apps/type/svgopentype.html
 * https://hacks.mozilla.org/2014/10/svg-colors-in-opentype-fonts/
 
-[4]: https://www.w3.org/community/svgopentype/2016/01/27/opentype-spec-adopts-svg-in-opentype-proposal/
-[5]: https://www.w3.org/2013/10/SVG_in_OpenType/
+[5]: https://www.w3.org/community/svgopentype/2016/01/27/opentype-spec-adopts-svg-in-opentype-proposal/
+[6]: https://www.w3.org/2013/10/SVG_in_OpenType/
 
 ## Usage (Linux)
 1. Store the font file in your `~/.fonts/` directory.
