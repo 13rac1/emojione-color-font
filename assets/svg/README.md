@@ -14,6 +14,8 @@ complete font.
   `../emojione-svg/1f441-1f538.svg`
 * 🗩 - `1f5e9.svg`: *Right Speech Bubble* from modified *Eye in Speech Bubble*
   `../emojione-svg/1f441-1f538.svg`
+* 0 - `0030.svg - 0039.svg, 002a.svg, 0023.svg, 20e3.svg`: Numbers, Number Sign,
+  Asterisk, and Number Pad from modified SVGs in Emoji One.
 
 ### Todo
 1. Replace symlinks with substitutions.
