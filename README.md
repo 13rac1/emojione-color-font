@@ -1,10 +1,11 @@
-# EmojiOne SVGinOT Font
-A color and B&W Emoji SVGinOT font built primarily from [Emoji One][1] artwork
-including full support for [ZWJ][2] [skin tone modifiers][3] and [country flags][4].
+# Emoji One SVGinOT Color Font
+A color and B&W emoji SVGinOT font built primarily from [Emoji One][1] artwork
+with full support for [ZWJ][2] [skin tone modifiers][3] and [country flags][4].
 
-The font works in all operating systems, but will *currently* show color
-emoji in Mozilla Firefox and Mozilla Thunderbird only. Regular B&W Emoji are
-generated for backwards compatibility in other applications.
+The font works in all operating systems, but will *currently* only show color
+emoji in Mozilla Firefox and Thunderbird. This is not a limitation of the font,
+but of the operating systems and applications. Regular B&W Emoji are included
+for backwards/fallback compatibility.
 
 [1]: http://emojione.com/
 [2]: http://unicode.org/emoji/charts/emoji-zwj-sequences.html
@@ -14,56 +15,78 @@ generated for backwards compatibility in other applications.
 ## Examples
 
 ## What is SVGinOT?
-*SVG in Open Type* is the new standard for color OpenType and Open Font Format
-fonts [adopted by the W3C on January 27th 2016][5] created by Adobe and Mozilla.
-It allows font creators to embed complete SVG files within a font enabling full
-color and even animations. There are more details in the [SVGinOT proposal][6].
+*SVG in Open Type* is the new standard by Adobe and Mozilla for color OpenType
+and Open Font Format fonts [adopted by the W3C on January 27th 2016][5]. It
+allows font creators to embed complete SVG files within a font enabling full
+color and even animations. There are more details in the [SVGinOT proposal][6]
+and the [OpenType SVG table specifications][7].
 
 SVGinOT Demos (Firefox only):
+
 * https://www.adobe.com/devnet-apps/type/svgopentype.html
 * https://hacks.mozilla.org/2014/10/svg-colors-in-opentype-fonts/
 
 [5]: https://www.w3.org/community/svgopentype/2016/01/27/opentype-spec-adopts-svg-in-opentype-proposal/
 [6]: https://www.w3.org/2013/10/SVG_in_OpenType/
+[7]: https://www.microsoft.com/typography/otspec/svg.htm
 
-## Usage (Linux)
+## Usage - Linux
+The font can be installed and set as the default Emoji font system wide.
+
 1. Store the font file in your `~/.fonts/` directory.
 2. Create a font config directory:
 ```sh
 mkdir -p `~/.config/fontconfig/`
 ```
 
-3. Override your defaults by creating a `fonts.conf`
+3. Replace your default, generally *DejaVu Sans*, by creating a `fonts.conf`:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+
 <fontconfig>
-  <!-- Generic name aliasing -->
-  <alias>
-    <family>sans-serif</family>
-    <prefer>
-      <family>EmojiOne SVGinOT</family>
-    </prefer>
-  </alias>
-  <alias>
-    <family>serif</family>
-    <prefer>
-      <family>EmojiOne SVGinOT</family>
-    </prefer>
-  </alias>
+  <!-- Make -->
+  <match>
+    <test name="family"><string>sans-serif</string></test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>Emoji One Color</string>
+    </edit>
+  </match>
+  <match>
+    <test name="family"><string>serif</string></test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>Emoji One Color</string>
+    </edit>
+  </match>
+  <match>
+    <test name="family"><string>monospace</string></test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>Emoji One Color</string>
+    </edit>
+  </match>
 </fontconfig>
 ```
+
+## Usage - Windows, OS X, Android
+
+The font installs and works like any other font. Microsoft, Apple, and Google
+created their own, now non-standard, color font formats, so currently it is
+best to use the emoji fonts included in those systems. Expect all three
+companies to add support for SVGinOT in the future.
 
 ## Building
 The build process has only been tested on Ubuntu Linux.
 
 Overview:
+
 1. B&W SVGs are generated on-the-fly from the color SVGs
 2. The B&W SVGs are imported based on their filename to create either regular
    glyphs or ligature glyphs.
 3. The color SVGs are imported to override both types of glyphs.
 
 Required applications:
+
 * Inkscape
 * Imagemagick
 * mkbitmap
@@ -75,8 +98,10 @@ Required applications:
 
 Run: `make`
 
+Or faster with multiple builds: `'make -j 4`
+
 *I am happy with the resulting glyphs, but if you have ideas about making
-them look even better? Let me know! I am not a font building professional and
+them look even better let me know! I am not a font building professional and
 only recently learned how to do all of this. So, it may be terribly wrong.* 😋
 
 ## Licenses
@@ -104,9 +129,9 @@ Please review the specific attribution requirements for commercial use of
 Emoji One icons: http://emojione.com/licensing/
 
 ### Twitter Emoji for Everyone License
-The some SVG files of the Twitter Emoji for Everyone project are used to fill
-in where Emoji One is missing characters required to generate a font.
-Files are stored in `assets/svg`.
+A few SVG files of the Twitter Emoji for Everyone project are used to fill in
+where Emoji One is missing characters required to generate a font. Files are
+stored in `assets/svg`.
 
 * Source: https://github.com/twitter/twemoji
 * Art License: Creative Commons Attribution 4.0 International
