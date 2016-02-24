@@ -68,12 +68,26 @@ mkdir -p `~/.config/fontconfig/`
 </fontconfig>
 ```
 
-## Usage - Windows, OS X, Android
+## Usage - OS X
 
-The font installs and works like any other font. Microsoft, Apple, and Google
-created their own, now non-standard, color font formats, so currently it is
-best to use the emoji fonts included in those systems. Expect all three
-companies to add support for SVGinOT in the future.
+The font installs like any other font and can be specifically selected, but
+the system will default to the `Apple Color Emoji` font. If wanted, change the
+default by disabling the original:
+
+```sh
+cd /System/Library/Fonts/
+sudo mv Apple\ Color\ Emoji.ttf Apple\ Color\ Emoji.ttf-old
+```
+
+*Reiterating: Only FireFox supports the color emoji for now. Safari and Chrome
+will use the fallback black and white emoji.*
+
+## Usage - Microsoft Windows 10
+
+The font installs like any other font and can be specifically selected, but
+the system will default to the `Segoe UI Emoji` font.
+
+It can be manually selected in CSS, but making it the default is still TBD.
 
 ## Building
 The build process has only been tested on Ubuntu Linux.

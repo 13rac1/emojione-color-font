@@ -13,7 +13,7 @@ table_name:
     Copyright 2015 Twitter, Inc. CC-BY.
   family: Emoji One Color
   # Subfamily is also called Style or Weight. Often set to: Regular
-  subfamily: SVGinOT
+  subfamily: Regular
   unique_id: Emoji One Color SVGinOT OSX eosrei.net
   full_name: Emoji One Color SVGinOT OSX
   version: 1.0-beta
