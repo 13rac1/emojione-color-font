@@ -39,14 +39,14 @@ The font can be installed and set as the default Emoji font system wide.
 mkdir -p `~/.config/fontconfig/`
 ```
 
-3. Replace your default, generally *DejaVu Sans*, by creating a `fonts.conf`:
+3. Override your default by creating a `fonts.conf`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 
 <fontconfig>
-  <!-- Make -->
+  <!-- Make Emoji One Color the initial fallback font-->
   <match>
     <test name="family"><string>sans-serif</string></test>
     <edit name="family" mode="prepend" binding="strong">
@@ -93,7 +93,7 @@ Required applications:
 * potrace
 * FontTools
 * FontForge
-* SMFBuild (created for this project!)
+* SCFBuild (created for this project!)
 * make
 
 Run: `make`

@@ -3,8 +3,8 @@
 
 .PHONY: clean
 
-OUTPUT_FONT := build/EmojiOne-SVGinOT.ttf
-SMFBUILD := SMFBuild/bin/smfbuild
+OUTPUT_FONT := build/EmojiOneColor-SVGinOT.ttf
+SCFBUILD := SCFBuild/bin/scfbuild
 
 TMP := /tmp
 # Use Linux Shared Memory to avoid wasted disk writes.
@@ -23,7 +23,7 @@ SVG_COLOR_FILES := $(patsubst build/svg-trace/%.svg, build/staging/%.svg, $(SVG_
 all: $(OUTPUT_FONT)
 
 $(OUTPUT_FONT): $(SVG_TRACE_FILES) $(SVG_COLOR_FILES)
-	$(SMFBUILD) build/svg-trace $(OUTPUT_FONT) --color-svg-dir=build/staging --transform="translate(0 -800) scale(1.0)"
+	$(SCFBUILD) -c scfbuild.yml -o $(OUTPUT_FONT)
 
 # Create black SVG traces of the color SVGs to use as glyphs.
 # 1. Make the EmojiOne SVG into a PNG with Inkscape
@@ -37,7 +37,7 @@ build/svg-trace/%.svg: build/staging/%.svg | build/svg-trace
 	rm $(TMP)/$(*F).png
 	mkbitmap -g -s 1 -f 10 -o $(TMP)/$(*F).pgm $(TMP)/$(*F).bmp
 	rm $(TMP)/$(*F).bmp
-	potrace -s --height 1000pt --width 1000pt -o $@ $(TMP)/$(*F).pgm
+	potrace -s --height 2048pt --width 2048pt -o $@ $(TMP)/$(*F).pgm
 	rm $(TMP)/$(*F).pgm
 
 # Copy the files from multiple directories into one source directory

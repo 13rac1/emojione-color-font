@@ -1,0 +1,32 @@
+# SCFBuild configuration file for Emoji One Color SVGinOT
+output_file: build/EmojiOneColor-SVGinOT.ttf
+glyph_svg_dir: build/svg-trace
+color_svg_dir: build/staging
+# The SVGs are 64x64. They are scaled to 1000x1000 by the renderer, but need
+# adjustment to line up correctly. 8/10*2048 = 1638 = Default font ascent
+color_svg_transform: translate(0 -1638) scale(2.048)
+verbose: False
+table_name:
+  copyright: >
+    Copyright 2016 Brad Erickson CC-BY.
+    Copyright 2015 Ranks.com Inc. CC-BY.
+    Copyright 2015 Twitter, Inc. CC-BY.
+  family: Emoji One Color
+  # Subfamily is also called Style or Weight. Often set to: Regular
+  subfamily: SVGinOT
+  unique_id: eosrei.net - Emoji One Color SVGinOT
+  full_name: Emoji One Color SVGinOT
+  version: 1.0-beta
+  postscript_name: Emoji One Color SVGinOT
+  #trademark:
+  manufacturer: Brad Erickson
+  designer: Ranks.com Inc.
+  description: >
+    A SVGinOT color emoji font using the Emoji One set:
+    https://github.com/eosrei/emojione-color-font/ Please review the
+    attribution requirements for commercial use of Emoji One icons:
+    http://emojione.com/licensing/
+  url_vendor: https://github.com/eosrei/emojione-color-font/
+  url_designer: http://emojione.com/
+  license: Creative Commons Attribution 4.0 International
+  url_license: http://creativecommons.org/licenses/by/4.0/
