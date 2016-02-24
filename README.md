@@ -12,8 +12,6 @@ for backwards/fallback compatibility.
 [3]: http://www.unicode.org/reports/tr51/#Diversity
 [4]: http://www.unicode.org/reports/tr51/#Flags
 
-## Examples
-
 ## What is SVGinOT?
 *SVG in Open Type* is the new standard by Adobe and Mozilla for color OpenType
 and Open Font Format fonts [adopted by the W3C on January 27th 2016][5]. It
@@ -30,13 +28,16 @@ SVGinOT Demos (Firefox only):
 [6]: https://www.w3.org/2013/10/SVG_in_OpenType/
 [7]: https://www.microsoft.com/typography/otspec/svg.htm
 
+## Examples
+![Firefox color emoji in Linux, OS X, and Firefox](images/demo.png?raw=true)
+
 ## Usage - Linux
 The font can be installed and set as the default Emoji font system wide.
 
 1. Store the font file in your `~/.fonts/` directory.
 2. Create a font config directory:
 ```sh
-mkdir -p `~/.config/fontconfig/`
+mkdir -p ~/.config/fontconfig/
 ```
 
 3. Override your default by creating a `fonts.conf`:
@@ -82,7 +83,7 @@ sudo mv Apple\ Color\ Emoji.ttf Apple\ Color\ Emoji.ttf-old
 *Reiterating: Only FireFox supports the color emoji for now. Safari and Chrome
 will use the fallback black and white emoji.*
 
-## Usage - Microsoft Windows 10
+## Usage - Windows 10
 
 The font installs like any other font and can be specifically selected, but
 the system will default to the `Segoe UI Emoji` font.
@@ -116,7 +117,7 @@ Or faster with multiple builds: `'make -j 4`
 
 *I am happy with the resulting glyphs, but if you have ideas about making
 them look even better let me know! I am not a font building professional and
-only recently learned how to do all of this. So, it may be terribly wrong.* 😋
+only recently learned how to do all of this.* 😋
 
 ## Licenses
 
