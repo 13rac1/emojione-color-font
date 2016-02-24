@@ -1,5 +1,5 @@
-# SCFBuild configuration file for Emoji One Color SVGinOT
-output_file: build/EmojiOneColor-SVGinOT.ttf
+# SCFBuild configuration file for Emoji One Color SVGinOT (OSX ONLY)
+output_file: build/EmojiOneColor-SVGinOT-OSX.ttf
 glyph_svg_dir: build/svg-trace
 color_svg_dir: build/staging
 # The SVGs are 64x64. They are scaled to 1000x1000 by the renderer, but need
@@ -14,16 +14,16 @@ table_name:
   family: Emoji One Color
   # Subfamily is also called Style or Weight. Often set to: Regular
   subfamily: SVGinOT
-  unique_id: Emoji One Color SVGinOT eosrei.net
-  full_name: Emoji One Color SVGinOT
+  unique_id: Emoji One Color SVGinOT OSX eosrei.net
+  full_name: Emoji One Color SVGinOT OSX
   version: 1.0-beta
-  # No spaces in PostScript Names
-  postscript_name: EmojiOneColorSVGinOT
+  # Use the same postscript name as the Apple Color Emoji font to overide it.
+  postscript_name: AppleColorEmoji
   #trademark:
   manufacturer: Brad Erickson
   designer: Ranks.com Inc.
   description: >
-    A SVGinOT color emoji font using the Emoji One set:
+    NOTE: This OSX specific font overrides Apple Color Emoji.
     A SVGinOT color emoji font using the Emoji One set:
     https://github.com/eosrei/emojione-color-font/
     Please review the attribution requirements for commercial
