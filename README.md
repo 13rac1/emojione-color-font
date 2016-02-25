@@ -12,40 +12,46 @@ for backwards/fallback compatibility.
 [3]: http://www.unicode.org/reports/tr51/#Diversity
 [4]: http://www.unicode.org/reports/tr51/#Flags
 
-## Get it
+## Download
 
-Download the most recent version from releases, you do not need the source:
-https://github.com/eosrei/emojione-color-font/releases
+Go to [releases](https://github.com/eosrei/emojione-color-font/releases),
+download the font zip file, install and proceed with the instructions below for
+your OS.
 
 ## What is SVGinOT?
-*SVG in Open Type* is the new standard by Adobe and Mozilla for color OpenType
-and Open Font Format fonts [adopted by the W3C on January 27th 2016][5]. It
-allows font creators to embed complete SVG files within a font enabling full
-color and even animations. There are more details in the [SVGinOT proposal][6]
-and the [OpenType SVG table specifications][7].
+*SVG in Open Type* is a standard by Adobe and Mozilla for color OpenType
+and Open Font Format fonts. It allows font creators to embed complete SVG files
+within a font enabling full color and even animations. There are more details
+in the [SVGinOT proposal][5] and the [OpenType SVG table specifications][6].
 
 SVGinOT Demos (Firefox only):
 
 * https://www.adobe.com/devnet-apps/type/svgopentype.html
 * https://hacks.mozilla.org/2014/10/svg-colors-in-opentype-fonts/
 
-[5]: https://www.w3.org/community/svgopentype/2016/01/27/opentype-spec-adopts-svg-in-opentype-proposal/
-[6]: https://www.w3.org/2013/10/SVG_in_OpenType/
-[7]: https://www.microsoft.com/typography/otspec/svg.htm
+[5]: https://www.w3.org/2013/10/SVG_in_OpenType/
+[6]: https://www.microsoft.com/typography/otspec/svg.htm
 
 ## Examples
 ![Firefox color emoji in Linux, OS X, and Firefox](images/demo.png?raw=true)
 
+Try out some examples so you can see before and after:
+* http://getemoji.com/
+* http://unicode.org/emoji/charts/emoji-zwj-sequences.html
+* https://en.wikipedia.org/wiki/Regional_Indicator_Symbol
+
 ## Usage - Linux
 The font can be installed and set as the default Emoji font system wide.
 
-1. Store the font file in your `~/.fonts/` directory.
-2. Create a font config directory:
-```sh
-mkdir -p ~/.config/fontconfig/
-```
-
-3. Override your default by creating a `fonts.conf`:
+1. Get the latest release from: https://github.com/eosrei/emojione-color-font/releases
+2. Uncompress the zip file
+3. Double click the `ttf` file to open it in *Font Viewer*
+4. Click the *Install Font* button
+5. Create a font config directory:
+   ```
+   mkdir -p ~/.config/fontconfig/
+   ```
+6. Override your default by creating a `fonts.conf`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -113,10 +119,10 @@ Required applications:
 * potrace
 * FontTools
 * FontForge
-* [SCFBuild][8] *(created for this project!)*
+* [SCFBuild][7] *(created for this project!)*
 * make
 
-[8]: https://github.com/eosrei/scfbuild
+[7]: https://github.com/eosrei/scfbuild
 Run: `make`
 
 Or faster with multiple builds: `'make -j 4`
