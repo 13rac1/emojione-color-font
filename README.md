@@ -108,9 +108,10 @@ Required applications:
 * potrace
 * FontTools
 * FontForge
-* SCFBuild (created for this project!)
+* [SCFBuild][8] *(created for this project!)*
 * make
 
+[8]: https://github.com/eosrei/scfbuild
 Run: `make`
 
 Or faster with multiple builds: `'make -j 4`
