@@ -12,6 +12,11 @@ for backwards/fallback compatibility.
 [3]: http://www.unicode.org/reports/tr51/#Diversity
 [4]: http://www.unicode.org/reports/tr51/#Flags
 
+## Get it
+
+Download the most recent version from releases, you do not need the source:
+https://github.com/eosrei/emojione-color-font/releases
+
 ## What is SVGinOT?
 *SVG in Open Type* is the new standard by Adobe and Mozilla for color OpenType
 and Open Font Format fonts [adopted by the W3C on January 27th 2016][5]. It
