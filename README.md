@@ -1,11 +1,11 @@
 # Emoji One SVGinOT Color Font
 A color and B&W emoji SVGinOT font built primarily from [Emoji One][1] artwork
-with full support for [ZWJ][2] [skin tone modifiers][3] and [country flags][4].
+with full support for [ZWJ][2], [skin tone modifiers][3] and [country flags][4].
 
 The font works in all operating systems, but will *currently* only show color
 emoji in Mozilla Firefox and Thunderbird. This is not a limitation of the font,
-but of the operating systems and applications. Regular B&W Emoji are included
-for backwards/fallback compatibility.
+but of the operating systems and applications. Regular B&W outline Emoji are
+included for backwards/fallback compatibility.
 
 [1]: http://emojione.com/
 [2]: http://unicode.org/emoji/charts/emoji-zwj-sequences.html
@@ -15,8 +15,23 @@ for backwards/fallback compatibility.
 ## Download
 
 Go to [releases](https://github.com/eosrei/emojione-color-font/releases),
-download the font zip file, install and proceed with the instructions below for
+download the font zip file, install, and proceed with the instructions below for
 your OS.
+
+## Examples
+
+**Before**: Firefox in Ubuntu Linux.
+
+[![Before Emoji One Color in Firefox Linux](images/demo-before.png?raw=true)](images/before-linux-firefox.png?raw=true)
+
+**After**: Firefox in all three operating systems, plus fallback outline characters in the
+other browsers.
+![Firefox color emoji in Linux, OS X, and Firefox](images/demo.png?raw=true)
+
+Some examples to see before and after on your machine:
+* http://getemoji.com/
+* http://unicode.org/emoji/charts/emoji-zwj-sequences.html
+* https://en.wikipedia.org/wiki/Regional_Indicator_Symbol
 
 ## What is SVGinOT?
 *SVG in Open Type* is a standard by Adobe and Mozilla for color OpenType
@@ -32,15 +47,7 @@ SVGinOT Demos (Firefox only):
 [5]: https://www.w3.org/2013/10/SVG_in_OpenType/
 [6]: https://www.microsoft.com/typography/otspec/svg.htm
 
-## Examples
-![Firefox color emoji in Linux, OS X, and Firefox](images/demo.png?raw=true)
-
-Try out some examples so you can see before and after:
-* http://getemoji.com/
-* http://unicode.org/emoji/charts/emoji-zwj-sequences.html
-* https://en.wikipedia.org/wiki/Regional_Indicator_Symbol
-
-## Usage - Linux
+## Install - Linux
 The font can be installed and set as the default Emoji font system wide.
 
 1. Get the latest release from: https://github.com/eosrei/emojione-color-font/releases
@@ -80,7 +87,7 @@ The font can be installed and set as the default Emoji font system wide.
 </fontconfig>
 ```
 
-## Usage - OS X
+## Install - OS X
 
 The font installs like any other font and can be specifically selected, but
 the system will default to the `Apple Color Emoji` font. If wanted, change the
@@ -94,7 +101,7 @@ sudo mv Apple\ Color\ Emoji.ttf Apple\ Color\ Emoji.ttf-old
 *Reiterating: Only FireFox supports the color emoji for now. Safari and Chrome
 will use the fallback black and white emoji.*
 
-## Usage - Windows 10
+## Install - Windows 10
 
 The font installs like any other font and can be specifically selected, but
 the system will default to the `Segoe UI Emoji` font.
@@ -125,11 +132,11 @@ Required applications:
 [7]: https://github.com/eosrei/scfbuild
 Run: `make`
 
-Or faster with multiple builds: `'make -j 4`
+Or faster with multiple builds: `make -j 4`
 
-*I am happy with the resulting glyphs, but if you have ideas about making
-them look even better let me know! I am not a font building professional and
-only recently learned how to do all of this.* 😋
+*I am happy with the resulting outline glyphs, but there's room for improvement.
+Let me know if you have ideas about making them look even better! I am not a
+font building professional and only recently learned how to do all of this.* 😋
 
 ## Licenses
 
