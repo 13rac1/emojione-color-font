@@ -58,7 +58,7 @@ The font can be installed and set as the default Emoji font system wide.
    ```
    mkdir -p ~/.config/fontconfig/
    ```
-6. Override your default by creating a `fonts.conf`:
+6. Override your defaults by creating a `~/.config/fontconfig/fonts.conf`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -108,6 +108,15 @@ the system will default to the `Segoe UI Emoji` font.
 
 It can be manually selected in CSS, but making it the default is still TBD.
 
+
+## Known issues:
+
+* VLC uses the system default Sans-Serif font for subtitles/OSD *without*
+  falling back for missing characters. Specifically select a subtitle/OSD font
+  [[details][7]].
+
+[7]:https://github.com/eosrei/emojione-color-font/issues/5
+
 ## Building
 The build process has only been tested on Ubuntu Linux.
 
@@ -126,10 +135,10 @@ Required applications:
 * potrace
 * FontTools
 * FontForge
-* [SCFBuild][7] *(created for this project!)*
+* [SCFBuild][8] *(created for this project!)*
 * make
 
-[7]: https://github.com/eosrei/scfbuild
+[8]: https://github.com/eosrei/scfbuild
 Run: `make`
 
 Or faster with multiple builds: `make -j 4`
