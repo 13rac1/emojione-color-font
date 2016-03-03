@@ -89,17 +89,21 @@ The font can be installed and set as the default Emoji font system wide.
 
 ## Install - OS X
 
-The font installs like any other font and can be specifically selected, but
-the system will default to the `Apple Color Emoji` font. If wanted, change the
-default by disabling the original:
+There are two install options for OS X: Normal and override `Apple Color Emoji`.
 
-```sh
-cd /System/Library/Fonts/
-sudo mv Apple\ Color\ Emoji.ttf Apple\ Color\ Emoji.ttf-old
-```
+Both versions are available from releases: https://github.com/eosrei/emojione-color-font/releases
 
-*Reiterating: Only FireFox supports the color emoji for now. Safari and Chrome
-will use the fallback black and white emoji.*
+1. `EmojiOneColor-SVGinOT.ttf.zip` - The regular version of the font installs
+   like any other font and can be specifically selected, but the system will
+   default to the `Apple Color Emoji` font.
+2. `EmojiOneColor-SVGinOT-OSX.ttf.zip` - A "hack" to replace the `Apple Color
+   Emoji` font by [using the same internal name][7]. Install and accept the warning
+   in Font Book.
+
+[7]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
+
+*Reiterating: Only FireFox supports the SVGinOT color emoji for now. Safari and
+Chrome will use the fallback black and white emoji.*
 
 ## Install - Windows 10
 
@@ -113,9 +117,9 @@ It can be manually selected in CSS, but making it the default is still TBD.
 
 * VLC uses the system default Sans-Serif font for subtitles/OSD *without*
   falling back for missing characters. Specifically select a subtitle/OSD font
-  [[details][7]].
+  [[details][8]].
 
-[7]:https://github.com/eosrei/emojione-color-font/issues/5
+[8]:https://github.com/eosrei/emojione-color-font/issues/5
 
 ## Building
 The build process has only been tested on Ubuntu Linux.
@@ -135,10 +139,10 @@ Required applications:
 * potrace
 * FontTools
 * FontForge
-* [SCFBuild][8] *(created for this project!)*
+* [SCFBuild][9] *(created for this project!)*
 * make
 
-[8]: https://github.com/eosrei/scfbuild
+[9]: https://github.com/eosrei/scfbuild
 Run: `make`
 
 Or faster with multiple builds: `make -j 4`
