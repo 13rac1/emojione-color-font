@@ -1,10 +1,10 @@
 # Emoji One SVGinOT Color Font
 A color and B&W emoji SVGinOT font built primarily from [Emoji One][1] artwork
-with full support for [ZWJ][2], [skin tone modifiers][3] and [country flags][4].
+with support for [ZWJ][2], [skin tone modifiers][3] and [country flags][4].
 
 The font works in all operating systems, but will *currently* only show color
 emoji in Mozilla Firefox and Thunderbird. This is not a limitation of the font,
-but of the operating systems and applications. Regular B&W outline Emoji are
+but of the operating systems and applications. Regular B&W outline emoji are
 included for backwards/fallback compatibility.
 
 [1]: http://emojione.com/
@@ -29,7 +29,7 @@ other browsers.
 ![Firefox color emoji in Linux, OS X, and Firefox](images/demo.png?raw=true)
 
 Some examples to see before and after on your machine:
-* http://getemoji.com/
+* http://eosrei.github.io/emojione-color-font/full-demo.html
 * http://unicode.org/emoji/charts/emoji-zwj-sequences.html
 * https://en.wikipedia.org/wiki/Regional_Indicator_Symbol
 
@@ -89,18 +89,21 @@ The font can be installed and set as the default Emoji font system wide.
 
 ## Install - OS X
 
-There are two install options for OS X: Normal and override `Apple Color Emoji`.
-
-Both versions are available from releases: https://github.com/eosrei/emojione-color-font/releases
+There are three install options for OS X. Both SVGinOT versions are available
+from releases: https://github.com/eosrei/emojione-color-font/releases
 
 1. `EmojiOneColor-SVGinOT.ttf.zip` - The regular version of the font installs
-   like any other font and can be specifically selected, but the system will
+   like any other font and can be specifically selected, but OS X will
    default to the `Apple Color Emoji` font.
 2. `EmojiOneColor-SVGinOT-OSX.ttf.zip` - A "hack" to replace the `Apple Color
-   Emoji` font by [using the same internal name][7]. Install and accept the warning
-   in Font Book.
+   Emoji` font by [using the same internal name][7]. Install and accept the
+   warning in Font Book.
+3. `emojione-apple.ttf` - A bitmap Apple-format EmojiOne color font is
+   [available in the emojione project][8].
+
 
 [7]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
+[8]:https://github.com/Ranks/emojione/tree/master/assets/fonts
 
 *Reiterating: Only FireFox supports the SVGinOT color emoji for now. Safari and
 Chrome will use the fallback black and white emoji.*
@@ -117,9 +120,9 @@ It can be manually selected in CSS, but making it the default is still TBD.
 
 * VLC uses the system default Sans-Serif font for subtitles/OSD *without*
   falling back for missing characters. Specifically select a subtitle/OSD font
-  [[details][8]].
+  [[details][9]].
 
-[8]:https://github.com/eosrei/emojione-color-font/issues/5
+[9]:https://github.com/eosrei/emojione-color-font/issues/5
 
 ## Building
 The build process has only been tested on Ubuntu Linux.
@@ -139,10 +142,10 @@ Required applications:
 * potrace
 * FontTools
 * FontForge
-* [SCFBuild][9] *(created for this project!)*
+* [SCFBuild][10] *(created for this project!)*
 * make
 
-[9]: https://github.com/eosrei/scfbuild
+[10]: https://github.com/eosrei/scfbuild
 Run: `make`
 
 Or faster with multiple builds: `make -j 4`
