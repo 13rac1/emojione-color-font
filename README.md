@@ -65,7 +65,10 @@ The font can be installed and set as the default Emoji font system wide.
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 
 <fontconfig>
-  <!-- Make Emoji One Color the initial fallback font-->
+  <!--
+  Make Emoji One Color the initial fallback font for sans-serif, sans, and
+  monospace. Override any specific requests for Apple Color Emoji.
+  -->
   <match>
     <test name="family"><string>sans-serif</string></test>
     <edit name="family" mode="prepend" binding="strong">
@@ -80,6 +83,12 @@ The font can be installed and set as the default Emoji font system wide.
   </match>
   <match>
     <test name="family"><string>monospace</string></test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>Emoji One Color</string>
+    </edit>
+  </match>
+  <match>
+    <test name="family"><string>Apple Color Emoji</string></test>
     <edit name="family" mode="prepend" binding="strong">
       <string>Emoji One Color</string>
     </edit>
