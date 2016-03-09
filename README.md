@@ -29,8 +29,8 @@ included for backwards/fallback compatibility.
 
 [![Before Emoji One Color in Firefox Linux](images/demo-before.png?raw=true)](images/before-linux-firefox.png?raw=true)
 
-**After**: Firefox in all three operating systems, plus fallback outline characters in the
-other browsers.
+**After**: Firefox in all three operating systems, plus fallback outline
+characters in the other browsers.
 ![Firefox color emoji in Linux, OS X, and Firefox](images/demo.png?raw=true)
 
 Some examples to see before and after on your machine:
@@ -54,19 +54,21 @@ SVGinOT Demos (Firefox only):
 
 ## Install on Linux
 The font can be installed for a user or system-wide. This describes how to
-install for a user and does not require root.
+install for a user and does not require root. You can simply copy/paste it all.
 
-1. Download the latest release from: https://github.com/eosrei/emojione-color-font/releases
-2. Uncompress the zip file
-3. Double click the `ttf` file to open it in *Font Viewer*
-4. Click the *Install Font* button
-5. Create a font config directory:
-   ```
-   mkdir -p ~/.config/fontconfig/
-   ```
-6. Override your defaults by creating a `~/.config/fontconfig/fonts.conf`:
-
-```xml
+```sh
+# 1. Download the latest version from: https://github.com/eosrei/emojione-color-font/releases
+curl -O https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta/EmojiOneColor-SVGinOT.ttf.zip
+# 2. Uncompress the zip file
+unzip EmojiOneColor-SVGinOT.ttf.zip
+# 3. Create a user font directory, if you don't have one:
+mkdir -p ~/.fonts/
+# 4. Move the font into `~/.fonts/`
+mv EmojiOneColor-SVGinOT.ttf ~/.fonts/
+# 5. Create a font config directory
+mkdir -p ~/.config/fontconfig/
+#6. Override your defaults by creating a `~/.config/fontconfig/fonts.conf`
+cat << 'EOF' > ~/.config/fontconfig/fonts.conf
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 
@@ -100,7 +102,13 @@ install for a user and does not require root.
     </edit>
   </match>
 </fontconfig>
+EOF
+# Just to be sure, clear your font cache and restart Firefox
+fc-cache -f -v
+#Done!
 ```
+
+Try the full demo at: http://eosrei.github.io/emojione-color-font/full-demo.html
 
 ## Install on OS X
 
@@ -113,9 +121,8 @@ from releases: https://github.com/eosrei/emojione-color-font/releases
 2. `EmojiOneColor-SVGinOT-OSX.ttf.zip` - A "hack" to replace the `Apple Color
    Emoji` font by [using the same internal name][7]. Install and accept the
    warning in Font Book.
-3. `emojione-apple.ttf` - A bitmap Apple-format EmojiOne color font is
+3. `emojione-apple.ttf` - A bitmap Apple-format Emoji One color font is
    [available in the emojione project][8].
-
 
 [7]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
 [8]:https://github.com/Ranks/emojione/tree/master/assets/fonts
