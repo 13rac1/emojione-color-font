@@ -12,11 +12,16 @@ included for backwards/fallback compatibility.
 [3]: http://www.unicode.org/reports/tr51/#Diversity
 [4]: http://www.unicode.org/reports/tr51/#Flags
 
-## Download
+## Table of Contents
 
-Go to [releases](https://github.com/eosrei/emojione-color-font/releases),
-download the font zip file, install, and proceed with the instructions below for
-your OS.
+* [Examples](#examples)
+* [What is SVGinOT?](#what-is-svginot)
+* [Install on Linux](#install-on-linux)
+* [Install on OS X](#install-on-os-x)
+* [Install on Windows](#install-on-windows)
+* [Known issues](#known-issues)
+* [Building](#building)
+* [Licenses](#licenses)
 
 ## Examples
 
@@ -47,10 +52,11 @@ SVGinOT Demos (Firefox only):
 [5]: https://www.w3.org/2013/10/SVG_in_OpenType/
 [6]: https://www.microsoft.com/typography/otspec/svg.htm
 
-## Install - Linux
-The font can be installed and set as the default Emoji font system wide.
+## Install on Linux
+The font can be installed for a user or system-wide. This describes how to
+install for a user and does not require root.
 
-1. Get the latest release from: https://github.com/eosrei/emojione-color-font/releases
+1. Download the latest release from: https://github.com/eosrei/emojione-color-font/releases
 2. Uncompress the zip file
 3. Double click the `ttf` file to open it in *Font Viewer*
 4. Click the *Install Font* button
@@ -96,7 +102,7 @@ The font can be installed and set as the default Emoji font system wide.
 </fontconfig>
 ```
 
-## Install - OS X
+## Install on OS X
 
 There are three install options for OS X. Both SVGinOT versions are available
 from releases: https://github.com/eosrei/emojione-color-font/releases
@@ -117,15 +123,14 @@ from releases: https://github.com/eosrei/emojione-color-font/releases
 *Reiterating: Only FireFox supports the SVGinOT color emoji for now. Safari and
 Chrome will use the fallback black and white emoji.*
 
-## Install - Windows 10
+## Install on Windows
 
 The font installs like any other font and can be specifically selected, but
 the system will default to the `Segoe UI Emoji` font.
 
 It can be manually selected in CSS, but making it the default is still TBD.
 
-
-## Known issues:
+## Known issues
 
 * VLC uses the system default Sans-Serif font for subtitles/OSD *without*
   falling back for missing characters. Specifically select a subtitle/OSD font
