@@ -58,7 +58,7 @@ install for a user and does not require root. You can simply copy/paste it all.
 
 ```sh
 # 1. Download the latest version from: https://github.com/eosrei/emojione-color-font/releases
-curl -O https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta/EmojiOneColor-SVGinOT.ttf.zip
+wget https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta/EmojiOneColor-SVGinOT.ttf.zip
 # 2. Uncompress the zip file
 unzip EmojiOneColor-SVGinOT.ttf.zip
 # 3. Create a user font directory, if you don't have one:
