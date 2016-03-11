@@ -21,7 +21,6 @@ table_name:
   subfamily: Regular
   unique_id: Emoji One Color SVGinOT OSX eosrei.net
   full_name: Emoji One Color SVGinOT OSX
-  version: 1.0-beta
   # Use the same postscript name as the Apple Color Emoji font to overide it.
   postscript_name: AppleColorEmoji
   #trademark:

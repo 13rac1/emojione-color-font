@@ -1,14 +1,19 @@
-
+# Makefile to create all versions of the Emoji One Color SVGinOT font
 # Run with: make -j [NUMBER_OF_CPUS]
-
-.PHONY: clean
-
-OUTPUT_FONT := build/EmojiOneColor-SVGinOT.ttf
-SCFBUILD := SCFBuild/bin/scfbuild
 
 TMP := /tmp
 # Use Linux Shared Memory to avoid wasted disk writes.
 #TMP := /dev/shm
+
+# Where to find scfbuild?
+SCFBUILD := SCFBuild/bin/scfbuild
+
+VERSION := 1.0-beta
+FONT_PREFIX := build/EmojiOneColor-SVGinOT
+REGULAR_FONT := $(FONT_PREFIX).ttf
+OSX_FONT := $(FONT_PREFIX)-OSX.ttf
+REGULAR_ZIP := $(FONT_PREFIX)-$(VERSION).zip
+OSX_ZIP := $(FONT_PREFIX)-OSX-$(VERSION).zip
 
 # There are two SVG source directories to keep the emojione assets separate.
 SVG_EMOJIONE := assets/emojione-svg
@@ -21,10 +26,20 @@ SVG_STAGE_FILES := $(patsubst $(SVG_MORE)/%.svg, build/stage/%.svg, $(SVG_STAGE_
 SVG_TRACE_FILES := $(patsubst build/stage/%.svg, build/svg-trace/%.svg, $(SVG_STAGE_FILES))
 SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_STAGE_FILES))
 
-all: $(OUTPUT_FONT)
+.PHONY: clean package
 
-$(OUTPUT_FONT): $(SVG_TRACE_FILES) $(SVG_COLOR_FILES)
-	$(SCFBUILD) -c scfbuild.yml -o $(OUTPUT_FONT)
+all: $(REGULAR_FONT) $(OSX_FONT)
+
+package: all
+	rm -f $(REGULAR_ZIP) $(OSX_ZIP)
+	7z a -tzip -mx=9 $(REGULAR_ZIP) ./$(REGULAR_FONT)
+	7z a -tzip -mx=9 $(OSX_ZIP) ./$(OSX_FONT)
+
+$(REGULAR_FONT): $(SVG_TRACE_FILES) $(SVG_COLOR_FILES)
+	$(SCFBUILD) -c scfbuild.yml -o $(REGULAR_FONT) --font-version="$(VERSION)"
+
+$(OSX_FONT): $(SVG_TRACE_FILES) $(SVG_COLOR_FILES)
+	$(SCFBUILD) -c scfbuild-osx.yml -o $(OSX_FONT) --font-version="$(VERSION)"
 
 # Create black SVG traces of the color SVGs to use as glyphs.
 # 1. Make the EmojiOne SVG into a PNG with Inkscape
