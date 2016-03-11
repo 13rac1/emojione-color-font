@@ -13,9 +13,9 @@ glyph_translate_y: 150
 color_transform: translate(0 -1788) scale(2.048)
 table_name:
   copyright: >
-    Copyright 2016 Brad Erickson CC-BY.
-    Copyright 2015 Ranks.com Inc. CC-BY.
-    Copyright 2015 Twitter, Inc. CC-BY.
+    Copyright 2016 Brad Erickson CC-BY-4.0
+    Copyright 2015 Ranks.com Inc. CC-BY-4.0
+    Copyright 2015 Twitter, Inc. CC-BY-4.0
   family: Emoji One Color
   # Subfamily is also called Style or Weight. Often set to: Regular
   subfamily: Regular
