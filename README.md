@@ -163,6 +163,7 @@ Required applications:
 * potrace
 * FontTools
 * FontForge
+* SVGO
 * [SCFBuild][10] *(created for this project!)*
 * make
 

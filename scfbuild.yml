@@ -2,7 +2,7 @@
 output_file: build/EmojiOneColor-SVGinOT.ttf
 verbose: False
 glyph_svg_dir: build/svg-trace
-color_svg_dir: build/staging
+color_svg_dir: build/svg-color
 # Translate the SVGs on import into glyphs.
 # y+150 for correct emoji-only vertical alignment.
 glyph_translate_x: 0

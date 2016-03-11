@@ -16,9 +16,10 @@ SVG_MORE := assets/svg
 
 # Create the lists of traced and color SVGs
 SVG_FILES := $(wildcard $(SVG_EMOJIONE)/*.svg) $(wildcard $(SVG_MORE)/*.svg)
-SVG_TRACE_FILES := $(patsubst $(SVG_EMOJIONE)/%.svg, build/svg-trace/%.svg, $(SVG_FILES))
-SVG_TRACE_FILES := $(patsubst $(SVG_MORE)/%.svg, build/svg-trace/%.svg, $(SVG_TRACE_FILES))
-SVG_COLOR_FILES := $(patsubst build/svg-trace/%.svg, build/staging/%.svg, $(SVG_TRACE_FILES))
+SVG_STAGE_FILES := $(patsubst $(SVG_EMOJIONE)/%.svg, build/stage/%.svg, $(SVG_FILES))
+SVG_STAGE_FILES := $(patsubst $(SVG_MORE)/%.svg, build/stage/%.svg, $(SVG_STAGE_FILES))
+SVG_TRACE_FILES := $(patsubst build/stage/%.svg, build/svg-trace/%.svg, $(SVG_STAGE_FILES))
+SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_STAGE_FILES))
 
 all: $(OUTPUT_FONT)
 
@@ -37,8 +38,11 @@ build/svg-trace/%.svg: build/staging/%.svg | build/svg-trace
 	rm $(TMP)/$(*F).png
 	mkbitmap -g -s 1 -f 10 -o $(TMP)/$(*F).pgm $(TMP)/$(*F).bmp
 	rm $(TMP)/$(*F).bmp
-	potrace -s --height 2048pt --width 2048pt -o $@ $(TMP)/$(*F).pgm
+	potrace --flat -s --height 2048pt --width 2048pt -o $@ $(TMP)/$(*F).pgm
 	rm $(TMP)/$(*F).pgm
+
+build/svg-color/%.svg: build/staging/%.svg | build/svg-color
+	svgo -i $< -o $@
 
 # Copy the files from multiple directories into one source directory
 build/staging/%.svg: $(SVG_EMOJIONE)/%.svg | build/staging
@@ -56,6 +60,9 @@ build/staging: | build
 
 build/svg-trace: | build
 	mkdir build/svg-trace
+
+build/svg-color: | build
+	mkdir build/svg-color
 
 clean:
 	rm -rf build
