@@ -54,20 +54,21 @@ SVGinOT Demos (Firefox only):
 
 ## Install on Linux
 The font can be installed for a user or system-wide. This describes how to
-install for a user and does not require root. You can simply copy/paste it all.
+install for a user and does not require root. You *can* simply copy/paste it all
+at one time.
 
 ```sh
 # 1. Download the latest version from: https://github.com/eosrei/emojione-color-font/releases
-wget https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta/EmojiOneColor-SVGinOT.ttf.zip
+wget https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta2/EmojiOneColor-SVGinOT-1.0-beta2.zip
 # 2. Uncompress the zip file
-unzip EmojiOneColor-SVGinOT.ttf.zip
+unzip -o EmojiOneColor-SVGinOT-1.0-beta2.zip
 # 3. Create a user font directory, if you don't have one:
 mkdir -p ~/.fonts/
-# 4. Move the font into `~/.fonts/`
+# 4. Move the font into ~/.fonts/
 mv EmojiOneColor-SVGinOT.ttf ~/.fonts/
 # 5. Create a font config directory
 mkdir -p ~/.config/fontconfig/
-#6. Override your defaults by creating a `~/.config/fontconfig/fonts.conf`
+#6. Override your defaults by creating a ~/.config/fontconfig/fonts.conf
 cat << 'EOF' > ~/.config/fontconfig/fonts.conf
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -115,10 +116,10 @@ Try the full demo at: http://eosrei.github.io/emojione-color-font/full-demo.html
 There are three install options for OS X. Both SVGinOT versions are available
 from releases: https://github.com/eosrei/emojione-color-font/releases
 
-1. `EmojiOneColor-SVGinOT.ttf.zip` - The regular version of the font installs
+1. `EmojiOneColor-SVGinOT-1.0-beta2.zip` - The regular version of the font installs
    like any other font and can be specifically selected, but OS X will
    default to the `Apple Color Emoji` font.
-2. `EmojiOneColor-SVGinOT-OSX.ttf.zip` - A "hack" to replace the `Apple Color
+2. ` EmojiOneColor-SVGinOT-OSX-1.0-beta2.zip` - A "hack" to replace the `Apple Color
    Emoji` font by [using the same internal name][7]. Install and accept the
    warning in Font Book.
 3. `emojione-apple.ttf` - A bitmap Apple-format Emoji One color font is
