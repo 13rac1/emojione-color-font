@@ -1,4 +1,4 @@
-# Emoji One SVGinOT Color Font
+# Emoji One Color SVGinOT Font
 A color and B&W emoji SVGinOT font built primarily from [Emoji One][1] artwork
 with support for [ZWJ][2], [skin tone modifiers][3] and [country flags][4].
 
@@ -7,10 +7,13 @@ emoji in Mozilla Firefox and Thunderbird. This is not a limitation of the font,
 but of the operating systems and applications. Regular B&W outline emoji are
 included for backwards/fallback compatibility.
 
+[Do you prefer Twitter Emoji for Everyone graphics?][5]
+
 [1]: http://emojione.com/
 [2]: http://unicode.org/emoji/charts/emoji-zwj-sequences.html
 [3]: http://www.unicode.org/reports/tr51/#Diversity
 [4]: http://www.unicode.org/reports/tr51/#Flags
+[5]: https://github.com/eosrei/twemoji-color-font
 
 ## Table of Contents
 
@@ -42,15 +45,15 @@ Some examples to see before and after on your machine:
 *SVG in Open Type* is a standard by Adobe and Mozilla for color OpenType
 and Open Font Format fonts. It allows font creators to embed complete SVG files
 within a font enabling full color and even animations. There are more details
-in the [SVGinOT proposal][5] and the [OpenType SVG table specifications][6].
+in the [SVGinOT proposal][6] and the [OpenType SVG table specifications][7].
 
 SVGinOT Demos (Firefox only):
 
 * https://www.adobe.com/devnet-apps/type/svgopentype.html
 * https://hacks.mozilla.org/2014/10/svg-colors-in-opentype-fonts/
 
-[5]: https://www.w3.org/2013/10/SVG_in_OpenType/
-[6]: https://www.microsoft.com/typography/otspec/svg.htm
+[6]: https://www.w3.org/2013/10/SVG_in_OpenType/
+[7]: https://www.microsoft.com/typography/otspec/svg.htm
 
 ## Install on Linux
 The font can be installed for a user or system-wide. This describes how to
@@ -68,7 +71,7 @@ mkdir -p ~/.fonts/
 mv EmojiOneColor-SVGinOT.ttf ~/.fonts/
 # 5. Create a font config directory
 mkdir -p ~/.config/fontconfig/
-#6. Override your defaults by creating a ~/.config/fontconfig/fonts.conf
+# 6. Override your defaults by creating a ~/.config/fontconfig/fonts.conf
 cat << 'EOF' > ~/.config/fontconfig/fonts.conf
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -104,9 +107,9 @@ cat << 'EOF' > ~/.config/fontconfig/fonts.conf
   </match>
 </fontconfig>
 EOF
-# Just to be sure, clear your font cache and restart Firefox
+# 7. Just to be sure, clear your font cache and restart Firefox
 fc-cache -f -v
-#Done!
+# Done!
 ```
 
 Try the full demo at: http://eosrei.github.io/emojione-color-font/full-demo.html
@@ -120,13 +123,13 @@ from releases: https://github.com/eosrei/emojione-color-font/releases
    like any other font and can be specifically selected, but OS X will
    default to the `Apple Color Emoji` font.
 2. ` EmojiOneColor-SVGinOT-OSX-1.0-beta2.zip` - A "hack" to replace the `Apple Color
-   Emoji` font by [using the same internal name][7]. Install and accept the
+   Emoji` font by [using the same internal name][8]. Install and accept the
    warning in Font Book.
 3. `emojione-apple.ttf` - A bitmap Apple-format Emoji One color font is
-   [available in the emojione project][8].
+   [available in the emojione project][9].
 
-[7]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
-[8]:https://github.com/Ranks/emojione/tree/master/assets/fonts
+[8]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
+[9]:https://github.com/Ranks/emojione/tree/master/assets/fonts
 
 *Reiterating: Only FireFox supports the SVGinOT color emoji for now. Safari and
 Chrome will use the fallback black and white emoji.*
@@ -142,9 +145,9 @@ It can be manually selected in CSS, but making it the default is still TBD.
 
 * VLC uses the system default Sans-Serif font for subtitles/OSD *without*
   falling back for missing characters. Specifically select a subtitle/OSD font
-  [[details][9]].
+  [[details][10]].
 
-[9]:https://github.com/eosrei/emojione-color-font/issues/5
+[10]:https://github.com/eosrei/emojione-color-font/issues/5
 
 ## Building
 The build process has only been tested on Ubuntu Linux.
@@ -165,10 +168,10 @@ Required applications:
 * FontTools
 * FontForge
 * SVGO
-* [SCFBuild][10] *(created for this project!)*
+* [SCFBuild][11] *(created for this project!)*
 * make
 
-[10]: https://github.com/eosrei/scfbuild
+[11]: https://github.com/eosrei/scfbuild
 Run: `make`
 
 Or faster with multiple builds: `make -j 4`

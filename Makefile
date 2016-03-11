@@ -26,7 +26,7 @@ SVG_STAGE_FILES := $(patsubst $(SVG_MORE)/%.svg, build/stage/%.svg, $(SVG_STAGE_
 SVG_TRACE_FILES := $(patsubst build/stage/%.svg, build/svg-trace/%.svg, $(SVG_STAGE_FILES))
 SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_STAGE_FILES))
 
-.PHONY: clean package
+.PHONY: all package clean
 
 all: $(REGULAR_FONT) $(OSX_FONT)
 
@@ -56,6 +56,7 @@ build/svg-trace/%.svg: build/staging/%.svg | build/svg-trace
 	potrace --flat -s --height 2048pt --width 2048pt -o $@ $(TMP)/$(*F).pgm
 	rm $(TMP)/$(*F).pgm
 
+# Optimize/clean the color SVG files
 build/svg-color/%.svg: build/staging/%.svg | build/svg-color
 	svgo -i $< -o $@
 
