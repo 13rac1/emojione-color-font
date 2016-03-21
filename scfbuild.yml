@@ -11,6 +11,8 @@ glyph_translate_y: 150
 # need adjustment to line up correctly. 8/10*2048 = 1638 = Default font ascent.
 # y+150 for correct emoji-only vertical alignment.
 color_transform: translate(0 -1788) scale(2.048)
+# Space width matching DejaVu Sans and Bitstream Vera Sans.
+width_space: 561
 table_name:
   copyright: >
     Copyright 2016 Brad Erickson CC-BY-4.0
@@ -24,7 +26,7 @@ table_name:
   # No spaces in PostScript Names
   postscript_name: EmojiOneColorSVGinOT
   #trademark:
-  manufacturer: Brad Erickson
+  manufacturer: eosrei.net
   designer: Ranks.com Inc.
   description: >
     A SVGinOT color emoji font using the Emoji One set:
