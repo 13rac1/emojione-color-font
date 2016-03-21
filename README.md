@@ -116,11 +116,17 @@ It can be manually selected in CSS, but making it the default is still TBD.
 
 ## Known issues
 
-* The whitespace character widths from the most recently selected fallback font
-  are used in Pango/GTK applications. Result: [Symbols/emoji in monospace
-  formatted text cause incorrect character alignment][10]
+* [Symbols/emoji in monospace formatted text cause incorrect character
+  alignment][10]. The whitespace character widths from the most recently selected
+  fallback font are used in Pango/GTK applications.
+* [The Firefox internal font cache is not cleared when the fontconfig
+  changes][11]. Manually clear it in `about.config`, by setting
+  `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`, restarting, and
+  setting it back to `true`. This may be encountered upgrading from v1.0-beta2
+  to v1.0-beta3.
 
 [10]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
+[11]:https://bugzilla.mozilla.org/show_bug.cgi?id=1254245
 
 ## Building
 The build process has only been tested on Ubuntu Linux.
@@ -141,10 +147,10 @@ Required applications:
 * FontTools
 * FontForge
 * SVGO
-* [SCFBuild][11] *(created for this project!)*
+* [SCFBuild][12] *(created for this project!)*
 * make
 
-[11]: https://github.com/eosrei/scfbuild
+[12]: https://github.com/eosrei/scfbuild
 Run: `make`
 
 Or faster with multiple builds: `make -j 4`
