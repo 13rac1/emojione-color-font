@@ -8,7 +8,7 @@ TMP := /tmp
 # Where to find scfbuild?
 SCFBUILD := SCFBuild/bin/scfbuild
 
-VERSION := 1.0-beta2
+VERSION := 1.0-beta3
 FONT_PREFIX := build/EmojiOneColor-SVGinOT
 REGULAR_FONT := $(FONT_PREFIX).ttf
 REGULAR_ZIP := $(FONT_PREFIX)-$(VERSION).zip
