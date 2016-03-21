@@ -64,7 +64,7 @@ Install for the current user only without root:
 # 1. Download the latest version
 wget https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta3/EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
 # 2. Uncompress the zip file
-unzip -o EmojiOneColor-SVGinOT-1.0-beta3.zip
+unzip -o EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
 # 3. Run the installer
 ./install.sh
 ```
