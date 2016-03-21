@@ -11,8 +11,9 @@ SCFBUILD := SCFBuild/bin/scfbuild
 VERSION := 1.0-beta2
 FONT_PREFIX := build/EmojiOneColor-SVGinOT
 REGULAR_FONT := $(FONT_PREFIX).ttf
-OSX_FONT := $(FONT_PREFIX)-OSX.ttf
 REGULAR_ZIP := $(FONT_PREFIX)-$(VERSION).zip
+LINUX_ZIP := $(FONT_PREFIX)-Linux-$(VERSION).zip
+OSX_FONT := $(FONT_PREFIX)-OSX.ttf
 OSX_ZIP := $(FONT_PREFIX)-OSX-$(VERSION).zip
 
 # There are two SVG source directories to keep the emojione assets separate.
@@ -31,9 +32,14 @@ SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_ST
 all: $(REGULAR_FONT) $(OSX_FONT)
 
 package: all
-	rm -f $(REGULAR_ZIP) $(OSX_ZIP)
+	rm -rf $(REGULAR_ZIP) $(LINUX_ZIP) $(OSX_ZIP) build/linux
 	7z a -tzip -mx=9 $(REGULAR_ZIP) ./$(REGULAR_FONT)
 	7z a -tzip -mx=9 $(OSX_ZIP) ./$(OSX_FONT)
+	mkdir build/linux
+	cp -R linux/* build/linux/
+	cp $(REGULAR_FONT) build/linux/
+	cp README.md build/linux/
+	7z a -tzip -mx=9 $(LINUX_ZIP) ./build/linux/*
 
 $(REGULAR_FONT): $(SVG_TRACE_FILES) $(SVG_COLOR_FILES)
 	$(SCFBUILD) -c scfbuild.yml -o $(REGULAR_FONT) --font-version="$(VERSION)"

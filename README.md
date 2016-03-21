@@ -32,7 +32,7 @@ included for backwards/fallback compatibility.
 
 [![Before Emoji One Color in Firefox Linux](images/demo-before.png?raw=true)](images/before-linux-firefox.png?raw=true)
 
-**After**: Firefox in all three operating systems, plus fallback outline
+**After**: Firefox in all three operating systems, plus fall back outline
 characters in the other browsers.
 ![Firefox color emoji in Linux, OS X, and Firefox](images/demo.png?raw=true)
 
@@ -56,66 +56,39 @@ SVGinOT Demos (Firefox only):
 [7]: https://www.microsoft.com/typography/otspec/svg.htm
 
 ## Install on Linux
-The font can be installed for a user or system-wide. This describes how to
-install for a user and does not require root. You *can* simply copy/paste it all
-at one time.
+The font can be installed for a user or system-wide. Get the latest version
+from releases: https://github.com/eosrei/emojione-color-font/releases
 
+Install for the current user only without root:
 ```sh
-# 1. Download the latest version from: https://github.com/eosrei/emojione-color-font/releases
-wget https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta2/EmojiOneColor-SVGinOT-1.0-beta2.zip
+# 1. Download the latest version
+wget https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta3/EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
 # 2. Uncompress the zip file
-unzip -o EmojiOneColor-SVGinOT-1.0-beta2.zip
-# 3. Create a user font directory, if you don't have one:
-mkdir -p ~/.fonts/
-# 4. Move the font into ~/.fonts/
-mv EmojiOneColor-SVGinOT.ttf ~/.fonts/
-# 5. Create a font config directory
-mkdir -p ~/.config/fontconfig/
-# 6. Override your defaults by creating a ~/.config/fontconfig/fonts.conf
-cat << 'EOF' > ~/.config/fontconfig/fonts.conf
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-
-<fontconfig>
-  <!--
-  Make Emoji One Color the initial fallback font for sans-serif, sans, and
-  monospace. Override any specific requests for Apple Color Emoji.
-  -->
-  <match>
-    <test name="family"><string>sans-serif</string></test>
-    <edit name="family" mode="prepend" binding="strong">
-      <string>Emoji One Color</string>
-    </edit>
-  </match>
-  <match>
-    <test name="family"><string>serif</string></test>
-    <edit name="family" mode="prepend" binding="strong">
-      <string>Emoji One Color</string>
-    </edit>
-  </match>
-  <match>
-    <test name="family"><string>monospace</string></test>
-    <edit name="family" mode="prepend" binding="strong">
-      <string>Emoji One Color</string>
-    </edit>
-  </match>
-  <match>
-    <test name="family"><string>Apple Color Emoji</string></test>
-    <edit name="family" mode="prepend" binding="strong">
-      <string>Emoji One Color</string>
-    </edit>
-  </match>
-</fontconfig>
-EOF
-# 7. Just to be sure, clear your font cache and restart Firefox
-fc-cache -f -v
-# Done!
+unzip -o EmojiOneColor-SVGinOT-1.0-beta3.zip
+# 3. Run the installer
+./install.sh
 ```
 
-Try the full demo at: http://eosrei.github.io/emojione-color-font/full-demo.html
+*Warning: This requires `Bitstream Vera` is installed and will change your
+systems default serif, sans-serif and monospace fonts.*
+
+### Why Bitstream Vera
+The default serif, sans-serif and monospace font for most Linux distributions is
+`DejaVu`. `DejaVu` includes a wide range of symbols which override the
+`Emoji One Color` characters. The previous solution was to make
+`Emoji One Color` the default system font, but that causes a number of issues
+*(Check the issue queue.)* A better solution is a different font that doesn't
+override any emoji characters such as `Bitstream Vera`. `Bitstream Vera` is
+the source of the glyphs used in `DejaVu`, so it's not very different.
+
+### Options
+The `Noto` and `Roboto` font families conflict far less than `DejaVu`. You may
+want to try them. Primary issues are the 0x2639 and 0x263a characters.
+
+### Arch Linux
+An AUR is available: https://aur.archlinux.org/packages/emojione-color-font/
 
 ## Install on OS X
-
 There are three install options for OS X. Both SVGinOT versions are available
 from releases: https://github.com/eosrei/emojione-color-font/releases
 
