@@ -92,13 +92,13 @@ An AUR is available: https://aur.archlinux.org/packages/emojione-color-font/
 There are three install options for OS X. Both SVGinOT versions are available
 from releases: https://github.com/eosrei/emojione-color-font/releases
 
-1. `EmojiOneColor-SVGinOT-1.0-beta2.zip` - The regular version of the font installs
-   like any other font and can be specifically selected, but OS X will
-   default to the `Apple Color Emoji` font.
-2. ` EmojiOneColor-SVGinOT-OSX-1.0-beta2.zip` - A "hack" to replace the `Apple Color
-   Emoji` font by [using the same internal name][8]. Install and accept the
-   warning in Font Book.
-3. `emojione-apple.ttf` - A bitmap Apple-format Emoji One color font is
+1. `EmojiOneColor-SVGinOT-1.0-beta3.zip` - The regular version of the font
+   installs like any other font and can be specifically selected, but OS X will
+   default to the `Apple Color Emoji` font for emojis.
+2. ` EmojiOneColor-SVGinOT-OSX-1.0-beta3.zip` - A hack to replace the `Apple
+   Color Emoji` font by [using the same internal name][8]. Install and accept
+   the warning in Font Book.
+3. `emojione-apple.ttf` - A SBIX bitmap Apple-format Emoji One color font is
    [available in the emojione project][9].
 
 [8]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
@@ -116,11 +116,11 @@ It can be manually selected in CSS, but making it the default is still TBD.
 
 ## Known issues
 
-* VLC uses the system default Sans-Serif font for subtitles/OSD *without*
-  falling back for missing characters. Specifically select a subtitle/OSD font
-  [[details][10]].
+* The whitespace character widths from the most recently selected fallback font
+  are used in Pango/GTK applications. Result: [Symbols/emoji in monospace
+  formatted text cause incorrect character alignment][10]
 
-[10]:https://github.com/eosrei/emojione-color-font/issues/5
+[10]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
 
 ## Building
 The build process has only been tested on Ubuntu Linux.
