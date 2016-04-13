@@ -1,6 +1,6 @@
 # Emoji One Color SVGinOT Font
 A color and B&W emoji SVGinOT font built primarily from [Emoji One][1] artwork
-with support for [ZWJ][2], [skin tone modifiers][3] and [country flags][4].
+with support for [ZWJ][2], [skin tone diversity][3] and [country flags][4].
 
 The font works in all operating systems, but will *currently* only show color
 emoji in Mozilla Firefox and Thunderbird. This is not a limitation of the font,
@@ -36,10 +36,8 @@ included for backwards/fallback compatibility.
 characters in the other browsers.
 ![Firefox color emoji in Linux, OS X, and Firefox](images/demo.png?raw=true)
 
-Some examples to see before and after on your machine:
+See before and after on your machine:
 * http://eosrei.github.io/emojione-color-font/full-demo.html
-* http://unicode.org/emoji/charts/emoji-zwj-sequences.html
-* https://en.wikipedia.org/wiki/Regional_Indicator_Symbol
 
 ## What is SVGinOT?
 *SVG in Open Type* is a standard by Adobe and Mozilla for color OpenType
@@ -59,7 +57,7 @@ SVGinOT Demos (Firefox only):
 The font can be installed for a user or system-wide. Get the latest version
 from releases: https://github.com/eosrei/emojione-color-font/releases
 
-Install for the current user only without root:
+Install for the current user without root:
 ```sh
 # 1. Download the latest version
 wget https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta3/EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
@@ -69,24 +67,28 @@ unzip -o EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
 ./install.sh
 ```
 
-*Warning: This requires `Bitstream Vera` is installed and will change your
+*Note: This requires `Bitstream Vera` is installed and will change your
 systems default serif, sans-serif and monospace fonts.*
 
 ### Why Bitstream Vera
 The default serif, sans-serif and monospace font for most Linux distributions is
 `DejaVu`. `DejaVu` includes a wide range of symbols which override the
 `Emoji One Color` characters. The previous solution was to make
-`Emoji One Color` the default system font, but that causes a number of issues
-*(Check the issue queue.)* A better solution is a different font that doesn't
-override any emoji characters such as `Bitstream Vera`. `Bitstream Vera` is
-the source of the glyphs used in `DejaVu`, so it's not very different.
+`Emoji One Color` the default system font, but that causes a number of issues.
+A better solution is a different font that doesn't override any emoji characters
+such as `Bitstream Vera`. `Bitstream Vera` is the source of the glyphs used in
+`DejaVu`, so it's not very different.
 
 ### Options
 The `Noto` and `Roboto` font families conflict far less than `DejaVu`. You may
 want to try them. Primary issues are the 0x2639 and 0x263a characters.
 
 ### Arch Linux
-An AUR is available: https://aur.archlinux.org/packages/emojione-color-font/
+An AUR package is available: https://aur.archlinux.org/packages/emojione-color-font/
+
+```sh
+$ yaourt -S emojione-color-font
+```
 
 ## Install on OS X
 There are three install options for OS X. Both SVGinOT versions are available
@@ -129,8 +131,6 @@ It can be manually selected in CSS, but making it the default is still TBD.
 [11]:https://bugzilla.mozilla.org/show_bug.cgi?id=1254245
 
 ## Building
-The build process has only been tested on Ubuntu Linux.
-
 Overview:
 
 1. B&W SVGs are generated on-the-fly from the color SVGs
@@ -138,26 +138,31 @@ Overview:
    glyphs or ligature glyphs.
 3. The color SVGs are imported to override both types of glyphs.
 
-Required applications:
-
+Requires:
 * Inkscape
 * Imagemagick
-* mkbitmap
-* potrace
-* FontTools
-* FontForge
+* potrace/mkbitmap
+* FontTools 3.0+
+* FontForge 20160405+
 * SVGO
-* [SCFBuild][12] *(created for this project!)*
 * make
+* [SCFBuild][12] *(Created for this project!)*
 
 [12]: https://github.com/eosrei/scfbuild
-Run: `make`
 
-Or faster with multiple builds: `make -j 4`
-
-*I am happy with the resulting outline glyphs, but there's room for improvement.
-Let me know if you have ideas about making them look even better! I am not a
-font building professional and only recently learned how to do all of this.* 😋
+Setup and build on Ubuntu 14.04 LTS:
+```sh
+sudo add-apt-repository ppa:fontforge/fontforge
+sudo apt-get update
+sudo apt-get install inkscape potrace npm nodejs nodejs-legacy fontforge \
+python-fontforge python-pip imagemagick git make
+sudo npm install -g svgo
+sudo pip install fonttools
+git clone https://github.com/eosrei/emojione-color-font.git
+cd emojione-color-font
+git clone https://github.com/eosrei/scfbuild.git SCFBuild
+make -j 4
+```
 
 ## License
 
