@@ -1,0 +1,36 @@
+Font: sans
+Vera.ttf: "Bitstream Vera Sans" "Roman"
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+
+Font: sans-serif
+Vera.ttf: "Bitstream Vera Sans" "Roman"
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+
+Font: serif
+VeraSe.ttf: "Bitstream Vera Serif" "Roman"
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+
+Font: mono
+VeraMono.ttf: "Bitstream Vera Sans Mono" "Roman"
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+
+Font: monospace
+VeraMono.ttf: "Bitstream Vera Sans Mono" "Roman"
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+
+Font: Bitstream Vera Sans
+Vera.ttf: "Bitstream Vera Sans" "Roman"
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+
+Font: Bitstream Vera Serif
+VeraSe.ttf: "Bitstream Vera Serif" "Roman"
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+
+Font: Bitstream Vera Sans Mono
+VeraMono.ttf: "Bitstream Vera Sans Mono" "Roman"
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+
+Font: Emoji One Color
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+Vera.ttf: "Bitstream Vera Sans" "Roman"
+
