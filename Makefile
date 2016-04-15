@@ -15,6 +15,7 @@ REGULAR_PACKAGE := build/$(FONT_PREFIX)-$(VERSION)
 OSX_FONT := build/$(FONT_PREFIX)-OSX.ttf
 OSX_PACKAGE := build/$(FONT_PREFIX)-OSX-$(VERSION)
 LINUX_PACKAGE := $(FONT_PREFIX)-Linux-$(VERSION)
+DEB_PACKAGE := fonts-emojione-svginot
 
 # There are two SVG source directories to keep the emojione assets separate.
 SVG_EMOJIONE := assets/emojione-svg
@@ -32,7 +33,7 @@ SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_ST
 all: $(REGULAR_FONT) $(OSX_FONT)
 
 # Create the operating system specific packages
-package: regular-package linux-package osx-package
+package: regular-package linux-package deb-package osx-package
 
 regular-package: $(REGULAR_FONT)
 	rm -f $(REGULAR_PACKAGE).zip
@@ -52,6 +53,13 @@ linux-package: $(REGULAR_FONT)
 	cp README.md build/$(LINUX_PACKAGE)
 	cp -R linux/* build/$(LINUX_PACKAGE)
 	tar zcvf build/$(LINUX_PACKAGE).tar.gz -C build $(LINUX_PACKAGE)
+
+deb-package: linux-package
+	rm -rf build/$(DEB_PACKAGE)-$(VERSION)
+	cp build/$(LINUX_PACKAGE).tar.gz build/$(DEB_PACKAGE)_$(VERSION).orig.tar.gz
+	cp -R build/$(LINUX_PACKAGE) build/$(DEB_PACKAGE)-$(VERSION)
+	cd build/$(DEB_PACKAGE)-$(VERSION); debuild -us -uc
+	#debuild -S
 
 osx-package: $(OSX_FONT)
 	rm -f $(OSX_PACKAGE).zip
