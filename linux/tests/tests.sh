@@ -17,7 +17,11 @@ FONTS[4]="monospace"
 FONTS[5]="Bitstream Vera Sans"
 FONTS[6]="Bitstream Vera Serif"
 FONTS[7]="Bitstream Vera Sans Mono"
-FONTS[8]="Emoji One Color"
+FONTS[8]="emoji"
+FONTS[9]="Emoji One Color"
+FONTS[10]="Apple Color Emoji"
+FONTS[11]="Segoe UI Emoji"
+FONTS[12]="Noto Color Emoji"
 
 rm -f $TMP
 

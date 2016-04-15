@@ -30,7 +30,23 @@ Font: Bitstream Vera Sans Mono
 VeraMono.ttf: "Bitstream Vera Sans Mono" "Roman"
 EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
 
+Font: emoji
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+Vera.ttf: "Bitstream Vera Sans" "Roman"
+
 Font: Emoji One Color
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+Vera.ttf: "Bitstream Vera Sans" "Roman"
+
+Font: Apple Color Emoji
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+Vera.ttf: "Bitstream Vera Sans" "Roman"
+
+Font: Segoe UI Emoji
+EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
+Vera.ttf: "Bitstream Vera Sans" "Roman"
+
+Font: Noto Color Emoji
 EmojiOneColor-SVGinOT.ttf: "Emoji One Color" "Regular"
 Vera.ttf: "Bitstream Vera Sans" "Roman"
 
