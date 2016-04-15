@@ -20,25 +20,27 @@ if [ -z "$XDG_DATA_HOME" ];then
 fi
 
 # Remove font from old directory if exists (temporary backwards compat)
-if [ -f ~/.fonts/EmojiOneColor-SVGinOT.ttf ];then
-  echo "Removing the font from ~/.fonts"
-  rm ~/.fonts/EmojiOneColor-SVGinOT.ttf
+if [ -f $HOME/.fonts/EmojiOneColor-SVGinOT.ttf ];then
+  echo "Removing the font from $HOME/.fonts"
+  rm $HOME/.fonts/EmojiOneColor-SVGinOT.ttf
 fi
 
 # Create a user font directory
 mkdir -p $XDG_DATA_HOME/fonts
 echo "Installing the font in: $XDG_DATA_HOME/fonts/"
 cp EmojiOneColor-SVGinOT.ttf $XDG_DATA_HOME/fonts/
+
 # Create a font config directory
 FONTCONFIG=$HOME/.config/fontconfig
-mkdir -p $FONTCONFIG
+mkdir -p $FONTCONFIG/conf.d/
 # Check for an existing font config
 if [ -f $FONTCONFIG/fonts.conf ];then
+  # (temporary backwards compat)
   echo "Existing fonts.conf backed up to fonts.bak"
   cp $FONTCONFIG/fonts.conf $FONTCONFIG/fonts.bak
 fi
 # Install fonts.conf
-cp fontconfig/user-bitstream-vera-fonts.conf $FONTCONFIG/fonts.conf
+cp fontconfig/56-emojione-color.conf $FONTCONFIG/conf.d/
 
 echo "Clearing font cache"
 fc-cache -f
