@@ -9,12 +9,12 @@ TMP := /tmp
 SCFBUILD := SCFBuild/bin/scfbuild
 
 VERSION := 1.0-beta3
-FONT_PREFIX := build/EmojiOneColor-SVGinOT
-REGULAR_FONT := $(FONT_PREFIX).ttf
-REGULAR_ZIP := $(FONT_PREFIX)-$(VERSION).zip
-LINUX_ZIP := $(FONT_PREFIX)-Linux-$(VERSION).zip
-OSX_FONT := $(FONT_PREFIX)-OSX.ttf
-OSX_ZIP := $(FONT_PREFIX)-OSX-$(VERSION).zip
+FONT_PREFIX := EmojiOneColor-SVGinOT
+REGULAR_FONT := build/$(FONT_PREFIX).ttf
+REGULAR_PACKAGE := build/$(FONT_PREFIX)-$(VERSION)
+OSX_FONT := build/$(FONT_PREFIX)-OSX.ttf
+OSX_PACKAGE := build/$(FONT_PREFIX)-OSX-$(VERSION)
+LINUX_PACKAGE := $(FONT_PREFIX)-Linux-$(VERSION)
 
 # There are two SVG source directories to keep the emojione assets separate.
 SVG_EMOJIONE := assets/emojione-svg
@@ -27,20 +27,42 @@ SVG_STAGE_FILES := $(patsubst $(SVG_MORE)/%.svg, build/stage/%.svg, $(SVG_STAGE_
 SVG_TRACE_FILES := $(patsubst build/stage/%.svg, build/svg-trace/%.svg, $(SVG_STAGE_FILES))
 SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_STAGE_FILES))
 
-.PHONY: all package clean
+.PHONY: all package regular-package linux-package osx-package clean
 
 all: $(REGULAR_FONT) $(OSX_FONT)
 
-package: all
-	rm -rf $(REGULAR_ZIP) $(LINUX_ZIP) $(OSX_ZIP) build/linux
-	7z a -tzip -mx=9 $(REGULAR_ZIP) ./$(REGULAR_FONT)
-	7z a -tzip -mx=9 $(OSX_ZIP) ./$(OSX_FONT)
-	mkdir build/linux
-	cp -R linux/* build/linux/
-	cp $(REGULAR_FONT) build/linux/
-	cp README.md build/linux/
-	7z a -tzip -mx=9 $(LINUX_ZIP) ./build/linux/*
+# Create the operating system specific packages
+package: regular-package linux-package osx-package
 
+regular-package: $(REGULAR_FONT)
+	rm -f $(REGULAR_PACKAGE).zip
+	rm -rf $(REGULAR_PACKAGE)
+	mkdir $(REGULAR_PACKAGE)
+	cp $(REGULAR_FONT) $(REGULAR_PACKAGE)
+	cp LICENSE* $(REGULAR_PACKAGE)
+	cp README.md $(REGULAR_PACKAGE)
+	7z a -tzip -mx=9 $(REGULAR_PACKAGE).zip ./$(REGULAR_PACKAGE)
+
+linux-package: $(REGULAR_FONT)
+	rm -f build/$(LINUX_PACKAGE).tar.gz
+	rm -rf build/$(LINUX_PACKAGE)
+	mkdir build/$(LINUX_PACKAGE)
+	cp $(REGULAR_FONT) build/$(LINUX_PACKAGE)
+	cp LICENSE* build/$(LINUX_PACKAGE)
+	cp README.md build/$(LINUX_PACKAGE)
+	cp -R linux/* build/$(LINUX_PACKAGE)
+	tar zcvf build/$(LINUX_PACKAGE).tar.gz -C build $(LINUX_PACKAGE)
+
+osx-package: $(OSX_FONT)
+	rm -f $(OSX_PACKAGE).zip
+	rm -rf $(OSX_PACKAGE)
+	mkdir $(OSX_PACKAGE)
+	cp $(OSX_FONT) $(OSX_PACKAGE)
+	cp LICENSE* $(OSX_PACKAGE)
+	cp README.md $(OSX_PACKAGE)
+	7z a -tzip -mx=9 $(OSX_PACKAGE).zip ./$(OSX_PACKAGE)
+
+# Build both versions of the fonts
 $(REGULAR_FONT): $(SVG_TRACE_FILES) $(SVG_COLOR_FILES)
 	$(SCFBUILD) -c scfbuild.yml -o $(REGULAR_FONT) --font-version="$(VERSION)"
 
