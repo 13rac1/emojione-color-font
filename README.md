@@ -121,14 +121,14 @@ It can be manually selected in CSS, but making it the default is still TBD.
 * [Symbols/emoji in monospace formatted text cause incorrect character
   alignment][10]. The whitespace character widths from the most recently selected
   fallback font are used in Pango/GTK applications.
-* [The Firefox internal font cache is not cleared when the fontconfig
-  changes][11]. Manually clear it in `about.config`, by setting
-  `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`, restarting, and
-  setting it back to `true`. This may be encountered upgrading from v1.0-beta2
-  to v1.0-beta3.
+* [Some font families are not matched correctly in Linux Firefox <47][11]
+  Workaround: Open `about:config` set
+  `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`.
+  Fixed in Firefox 47+. [[issue #31][12]]
 
 [10]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
-[11]:https://bugzilla.mozilla.org/show_bug.cgi?id=1254245
+[11]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
+[12]:https://github.com/eosrei/emojione-color-font/issues/31
 
 ## Building
 Overview:
@@ -146,9 +146,9 @@ Requires:
 * FontForge 20160405+
 * SVGO
 * make
-* [SCFBuild][12] *(Created for this project!)*
+* [SCFBuild][13] *(Created for this project!)*
 
-[12]: https://github.com/eosrei/scfbuild
+[13]: https://github.com/eosrei/scfbuild
 
 Setup and build on Ubuntu 14.04 LTS:
 ```sh
