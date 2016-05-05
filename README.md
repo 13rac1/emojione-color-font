@@ -60,10 +60,11 @@ from releases: https://github.com/eosrei/emojione-color-font/releases
 Install for the current user without root:
 ```sh
 # 1. Download the latest version
-wget https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta3/EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
-# 2. Uncompress the zip file
-unzip -o EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
+wget https://github.com/eosrei/emojione-color-font/releases/download/v1.0/EmojiOneColor-SVGinOT-Linux-1.0.tar.gz
+# 2. Uncompress the file
+tar zxf EmojiOneColor-SVGinOT-Linux-1.0.tar.gz
 # 3. Run the installer
+cd EmojiOneColor-SVGinOT-Linux-1.0
 ./install.sh
 ```
 
@@ -106,10 +107,10 @@ want to try them. Primary issues are the 0x2639 and 0x263a characters.
 There are three install options for OS X. Both SVGinOT versions are available
 from releases: https://github.com/eosrei/emojione-color-font/releases
 
-1. `EmojiOneColor-SVGinOT-1.0-beta3.zip` - The regular version of the font
+1. `EmojiOneColor-SVGinOT-1.0.zip` - The regular version of the font
    installs like any other font and can be specifically selected, but OS X will
    default to the `Apple Color Emoji` font for emojis.
-2. ` EmojiOneColor-SVGinOT-OSX-1.0-beta3.zip` - A hack to replace the `Apple
+2. ` EmojiOneColor-SVGinOT-OSX-1.0.zip` - A hack to replace the `Apple
    Color Emoji` font by [using the same internal name][9]. Install and accept
    the warning in Font Book.
 3. `emojione-apple.ttf` - A SBIX bitmap Apple-format Emoji One color font is
