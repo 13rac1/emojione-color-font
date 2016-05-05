@@ -70,6 +70,22 @@ unzip -o EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
 *Note: This requires `Bitstream Vera` is installed and will change your
 systems default serif, sans-serif and monospace fonts.*
 
+### Install on Ubuntu Linux
+Launchpad PPA: https://launchpad.net/~eosrei/+archive/ubuntu/fonts
+
+```sh
+sudo apt-add-repository ppa:eosrei/fonts
+sudo apt-get update
+sudo apt-get install fonts-emojione-svginot
+```
+
+### Install on Arch Linux
+AUR package: https://aur.archlinux.org/packages/emojione-color-font/
+
+```sh
+yaourt -S emojione-color-font
+```
+
 ### Why Bitstream Vera
 The default serif, sans-serif and monospace font for most Linux distributions is
 `DejaVu`. `DejaVu` includes a wide range of symbols which override the
@@ -79,16 +95,9 @@ A better solution is a different font that doesn't override any emoji characters
 such as `Bitstream Vera`. `Bitstream Vera` is the source of the glyphs used in
 `DejaVu`, so it's not very different.
 
-### Options
+### Additional Default Font Options
 The `Noto` and `Roboto` font families conflict far less than `DejaVu`. You may
 want to try them. Primary issues are the 0x2639 and 0x263a characters.
-
-### Arch Linux
-An AUR package is available: https://aur.archlinux.org/packages/emojione-color-font/
-
-```sh
-$ yaourt -S emojione-color-font
-```
 
 ## Install on OS X
 There are three install options for OS X. Both SVGinOT versions are available
@@ -121,7 +130,7 @@ It can be manually selected in CSS, but making it the default is still TBD.
 * [Symbols/emoji in monospace formatted text cause incorrect character
   alignment][10]. The whitespace character widths from the most recently selected
   fallback font are used in Pango/GTK applications.
-* [Some font families are not matched correctly in Linux Firefox <47][11]
+* [Some font families are not matched correctly in Linux Firefox <47][11].
   Workaround: Open `about:config` set
   `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`.
   Fixed in Firefox 47+. [[issue #31][12]]
