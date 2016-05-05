@@ -79,6 +79,9 @@ sudo apt-get update
 sudo apt-get install fonts-emojione-svginot
 ```
 
+Useful: [Emojione Picker for Ubuntu][8]
+[8]: https://github.com/gentakojima/emojione-picker-ubuntu
+
 ### Install on Arch Linux
 AUR package: https://aur.archlinux.org/packages/emojione-color-font/
 
@@ -107,13 +110,13 @@ from releases: https://github.com/eosrei/emojione-color-font/releases
    installs like any other font and can be specifically selected, but OS X will
    default to the `Apple Color Emoji` font for emojis.
 2. ` EmojiOneColor-SVGinOT-OSX-1.0-beta3.zip` - A hack to replace the `Apple
-   Color Emoji` font by [using the same internal name][8]. Install and accept
+   Color Emoji` font by [using the same internal name][9]. Install and accept
    the warning in Font Book.
 3. `emojione-apple.ttf` - A SBIX bitmap Apple-format Emoji One color font is
-   [available in the emojione project][9].
+   [available in the emojione project][10].
 
-[8]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
-[9]:https://github.com/Ranks/emojione/tree/master/assets/fonts
+[9]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
+[10]:https://github.com/Ranks/emojione/tree/master/assets/fonts
 
 *Reiterating: Only FireFox supports the SVGinOT color emoji for now. Safari and
 Chrome will use the fallback black and white emoji.*
@@ -121,23 +124,26 @@ Chrome will use the fallback black and white emoji.*
 ## Install on Windows
 
 The font installs like any other font and can be specifically selected, but
-the system will default to the `Segoe UI Emoji` font.
+the system will default to the `Segoe UI Emoji` font. Get the current version
+from: https://github.com/eosrei/emojione-color-font/releases
 
-It can be manually selected in CSS, but making it the default is still TBD.
+Help wanted: [How to override the Windows default Segoe UI Emoji font][11]
+
+[11]:https://github.com/eosrei/emojione-color-font/issues/15
 
 ## Known issues
 
 * [Symbols/emoji in monospace formatted text cause incorrect character
-  alignment][10]. The whitespace character widths from the most recently selected
+  alignment][12]. The whitespace character widths from the most recently selected
   fallback font are used in Pango/GTK applications.
-* [Some font families are not matched correctly in Linux Firefox <47][11].
+* [Some font families are not matched correctly in Linux Firefox <47][13].
   Workaround: Open `about:config` set
   `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`.
-  Fixed in Firefox 47+. [[issue #31][12]]
+  Fixed in Firefox 47+. [[issue #31][14]]
 
-[10]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
-[11]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
-[12]:https://github.com/eosrei/emojione-color-font/issues/31
+[12]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
+[13]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
+[14]:https://github.com/eosrei/emojione-color-font/issues/31
 
 ## Building
 Overview:
@@ -155,9 +161,9 @@ Requires:
 * FontForge 20160405+
 * SVGO
 * make
-* [SCFBuild][13] *(Created for this project!)*
+* [SCFBuild][15] *(Created for this project!)*
 
-[13]: https://github.com/eosrei/scfbuild
+[15]: https://github.com/eosrei/scfbuild
 
 Setup and build on Ubuntu 14.04 LTS:
 ```sh
