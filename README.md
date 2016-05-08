@@ -3,7 +3,7 @@ A color and B&W emoji SVGinOT font built primarily from [Emoji One][1] artwork
 with support for [ZWJ][2], [skin tone diversity][3] and [country flags][4].
 
 The font works in all operating systems, but will *currently* only show color
-emoji in Mozilla Firefox and Thunderbird. This is not a limitation of the font,
+emoji in Mozilla Firefox, Seamonkey and Thunderbird. This is not a limitation of the font,
 but of the operating systems and applications. Regular B&W outline emoji are
 included for backwards/fallback compatibility.
 
