@@ -7,10 +7,8 @@ color_svg_dir: build/svg-color
 # y+150 for correct emoji-only vertical alignment.
 glyph_translate_x: 0
 glyph_translate_y: 150
-# The SVGs are 60x60. They are scaled to 1000x1000 by the Firefox renderer, but
-# need adjustment to line up correctly. 8/10*2048 = 1638 = Default font ascent.
-# y+150 for correct emoji-only vertical alignment.
-color_transform: translate(0 -1788) scale(2.048)
+# y-150 for correct emoji-only vertical alignment.
+color_transform: translate(0 -150)
 # Space width matching DejaVu Sans and Bitstream Vera Sans.
 width_space: 561
 table_name:
