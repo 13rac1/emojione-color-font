@@ -1,6 +1,6 @@
 # Emoji One Color SVGinOT Font
-A color and B&W emoji SVGinOT font built primarily from [Emoji One][1] artwork
-with support for [ZWJ][2], [skin tone diversity][3] and [country flags][4].
+A color and B&W emoji SVGinOT font built from [Emoji One][1] artwork with
+support for [ZWJ][2], [skin tone diversity][3] and [country flags][4].
 
 The font works in all operating systems, but will *currently* only show color
 emoji in Firefox, Thunderbird and other Mozilla Gecko-based applications. This

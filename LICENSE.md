@@ -2,7 +2,6 @@
 
 * Copyright 2016 Brad Erickson CC-BY-4.0
 * Copyright 2015 Ranks.com Inc. CC-BY-4.0
-* Copyright 2015 Twitter, Inc. CC-BY-4.0
 
 ## Artwork
 * Applies to SVG file and TTF font files
@@ -25,11 +24,3 @@ color glyphs. Files are stored in `assets/emojione-svg`.
 
 Please review the specific attribution requirements for commercial use of
 Emoji One icons: http://emojione.com/licensing/
-
-## Twitter Emoji for Everyone License
-A few SVG files of the Twitter Emoji for Everyone project are used to fill in
-where Emoji One is missing characters required to generate a font. Files are
-stored in `assets/svg`.
-
-* Source: https://github.com/twitter/twemoji
-* Art License: Creative Commons Attribution 4.0 International
