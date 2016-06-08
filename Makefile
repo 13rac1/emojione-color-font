@@ -1,9 +1,9 @@
 # Makefile to create all versions of the Emoji One Color SVGinOT font
 # Run with: make -j [NUMBER_OF_CPUS]
 
-TMP := /tmp
-# Use Linux Shared Memory to avoid wasted disk writes.
-#TMP := /dev/shm
+# Use Linux Shared Memory to avoid wasted disk writes. Use /tmp to disable.
+TMP := /dev/shm
+#TMP := /tmp
 
 # Where to find scfbuild?
 SCFBUILD := SCFBuild/bin/scfbuild
