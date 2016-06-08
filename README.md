@@ -3,9 +3,9 @@ A color and B&W emoji SVGinOT font built primarily from [Emoji One][1] artwork
 with support for [ZWJ][2], [skin tone diversity][3] and [country flags][4].
 
 The font works in all operating systems, but will *currently* only show color
-emoji in Mozilla Firefox and Thunderbird. This is not a limitation of the font,
-but of the operating systems and applications. Regular B&W outline emoji are
-included for backwards/fallback compatibility.
+emoji in Firefox, Thunderbird and other Mozilla Gecko-based applications. This
+is not a limitation of the font, but of the operating systems and applications.
+Regular B&W outline emoji are included for backwards/fallback compatibility.
 
 [Do you prefer Twitter Emoji for Everyone graphics?][5]
 
