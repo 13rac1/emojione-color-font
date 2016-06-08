@@ -7,8 +7,9 @@ color_svg_dir: build/svg-color
 # y+150 for correct emoji-only vertical alignment.
 glyph_translate_x: 0
 glyph_translate_y: 150
-# y-150 for correct emoji-only vertical alignment.
-color_transform: translate(0 -150)
+# y-9.6 for correct emoji-only vertical alignment.
+# Glyphs height is 2048, SVGs height is 64 x 2.048.
+color_transform: translate(0 -9.6)
 # Space width matching DejaVu Sans and Bitstream Vera Sans.
 width_space: 561
 table_name:
