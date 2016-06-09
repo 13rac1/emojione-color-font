@@ -4,7 +4,7 @@
 * Copyright 2015 Ranks.com Inc. CC-BY-4.0
 
 ## Artwork
-* Applies to SVG file and TTF font files
+* Applies to SVG files and TTF font files
 * License: Creative Commons Attribution 4.0 International
 * Human Readable License: http://creativecommons.org/licenses/by/4.0/
 * Complete Legal Terms: http://creativecommons.org/licenses/by/4.0/legalcode
@@ -14,8 +14,8 @@
 * License: MIT
 * Complete Legal Terms: http://opensource.org/licenses/MIT
 
-## Emoji One License
-The SVG files of the [Emoji One](http://emojione.com/) project have been
+## EmojiOne License
+The SVG files of the [EmojiOne](http://emojione.com/) project have been
 modified to create the fallback emoji glyphs and used as-is for the SVGinOT
 color glyphs. Files are stored in `assets/emojione-svg`.
 
@@ -23,4 +23,4 @@ color glyphs. Files are stored in `assets/emojione-svg`.
 * Art License: Creative Commons Attribution 4.0 International
 
 Please review the specific attribution requirements for commercial use of
-Emoji One icons: http://emojione.com/licensing/
+EmojiOne graphics: http://emojione.com/licensing/

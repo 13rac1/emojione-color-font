@@ -1,6 +1,6 @@
 #!/bin/sh
 #https://github.com/eosrei/emojione-color-font
-echo "Emoji One Color font uninstaller for Linux\n"
+echo "EmojiOne Color font uninstaller for Linux\n"
 
 set -v
 

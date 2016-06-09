@@ -15,8 +15,8 @@ Depends:
   ttf-bitstream-vera
 Enhances:
   firefox
-Description: Emoji One color emoji SVGinOT font
- A color emoji SVGinOT font using Emoji One graphics with diversity and country
+Description: EmojiOne color emoji SVGinOT font
+ A color emoji SVGinOT font using EmojiOne graphics with diversity and country
  flags.
  .
  Currently only Mozilla Firefox and Thunderbird support SVGinOT fonts.

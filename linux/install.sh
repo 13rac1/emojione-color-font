@@ -1,6 +1,6 @@
 #!/bin/sh
 #https://github.com/eosrei/emojione-color-font
-echo "Emoji One Color font installer for Linux\n"
+echo "EmojiOne Color font installer for Linux\n"
 
 # Check for Bitstream Vera
 fc-list | grep "Bitstream Vera" > /dev/null

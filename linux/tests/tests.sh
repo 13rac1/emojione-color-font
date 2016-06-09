@@ -1,5 +1,5 @@
 #!/bin/bash
-# Tests of fontconfig configuration for Bitstream Vera and Emoji One Color.
+# Tests of fontconfig configuration for Bitstream Vera and EmojiOne Color.
 #
 # The first two lines of the results of fc-match for each font request are
 # are compared to known correct results. Any differences are shown.
@@ -18,7 +18,7 @@ FONTS[5]="Bitstream Vera Sans"
 FONTS[6]="Bitstream Vera Serif"
 FONTS[7]="Bitstream Vera Sans Mono"
 FONTS[8]="emoji"
-FONTS[9]="Emoji One Color"
+FONTS[9]="EmojiOne Color"
 FONTS[10]="Apple Color Emoji"
 FONTS[11]="Segoe UI Emoji"
 FONTS[12]="Noto Color Emoji"

@@ -1,5 +1,5 @@
-# Emoji One Color SVGinOT Font
-A color and B&W emoji SVGinOT font built from [Emoji One][1] artwork with
+# EmojiOne Color SVGinOT Font
+A color and B&W emoji SVGinOT font built from [EmojiOne][1] artwork with
 support for [ZWJ][2], [skin tone diversity][3] and [country flags][4].
 
 The font works in all operating systems, but will *currently* only show color
@@ -30,7 +30,7 @@ Regular B&W outline emoji are included for backwards/fallback compatibility.
 
 **Before**: Firefox in Ubuntu Linux.
 
-[![Before Emoji One Color in Firefox Linux](images/demo-before.png?raw=true)](images/before-linux-firefox.png?raw=true)
+[![Before EmojiOne Color in Firefox Linux](images/demo-before.png?raw=true)](images/before-linux-firefox.png?raw=true)
 
 **After**: Firefox in all three operating systems, plus fall back outline
 characters in the other browsers.
@@ -63,8 +63,8 @@ systems default serif, sans-serif and monospace fonts.*
 ### Why Bitstream Vera
 The default serif, sans-serif and monospace font for most Linux distributions is
 `DejaVu`. `DejaVu` includes a wide range of symbols which override the
-`Emoji One Color` characters. The previous solution was to make
-`Emoji One Color` the default system font, but that causes a number of issues.
+`EmojiOne Color` characters. The previous solution was to make
+`EmojiOne Color` the default system font, but that causes a number of issues.
 A better solution is a different font that doesn't override any emoji characters
 such as `Bitstream Vera`. `Bitstream Vera` is the source of the glyphs used in
 `DejaVu`, so it's not very different. 99%+ of people will not notice the
@@ -127,7 +127,7 @@ from releases: https://github.com/eosrei/emojione-color-font/releases
 2. ` EmojiOneColor-SVGinOT-OSX-1.0.zip` - A hack to replace the `Apple
    Color Emoji` font by [using the same internal name][9]. Install and accept
    the warning in Font Book.
-3. `emojione-apple.ttf` - A SBIX bitmap Apple-format Emoji One color font is
+3. `emojione-apple.ttf` - A SBIX bitmap Apple-format EmojiOne color font is
    [available in the emojione project][10].
 
 [9]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/

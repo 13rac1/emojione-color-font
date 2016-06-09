@@ -1,6 +1,6 @@
 ## Additional SVG files
 
-SVGs to fill in where the Emoji One is missing characters needed to create a
+SVGs to fill in where the EmojiOne is missing characters needed to create a
 complete font.
 
 * ‍👪 - `1f468-1f469-1f466.svg -> ../emojione-svg/1f46a.svg`: Symbolic link for
@@ -13,7 +13,7 @@ complete font.
   `../emojione-svg/1f441-1f538.svg`
 * 🗩 - `1f5e9.svg`: *Right Speech Bubble* from modified *Eye in Speech Bubble*
   `../emojione-svg/1f441-1f538.svg`
-* `20e3.svg`: Number Pad from modified SVGs in Emoji One.
+* `20e3.svg`: Number Pad from modified SVGs in EmojiOne.
 
 ### Todo
 1. Replace symlinks with substitutions.

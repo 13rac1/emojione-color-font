@@ -1,4 +1,4 @@
-# Makefile to create all versions of the Emoji One Color SVGinOT font
+# Makefile to create all versions of the EmojiOne Color SVGinOT font
 # Run with: make -j [NUMBER_OF_CPUS]
 
 # Use Linux Shared Memory to avoid wasted disk writes. Use /tmp to disable.
