@@ -57,6 +57,24 @@ SVGinOT Demos (Firefox only):
 The font can be installed for a user or system-wide. Get the latest version
 from releases: https://github.com/eosrei/emojione-color-font/releases
 
+*Note: This requires `Bitstream Vera` is installed and will change your
+systems default serif, sans-serif and monospace fonts.*
+
+### Why Bitstream Vera
+The default serif, sans-serif and monospace font for most Linux distributions is
+`DejaVu`. `DejaVu` includes a wide range of symbols which override the
+`Emoji One Color` characters. The previous solution was to make
+`Emoji One Color` the default system font, but that causes a number of issues.
+A better solution is a different font that doesn't override any emoji characters
+such as `Bitstream Vera`. `Bitstream Vera` is the source of the glyphs used in
+`DejaVu`, so it's not very different. 99%+ of people will not notice the
+difference.
+
+### Additional Default Font Options
+The `Noto` and `Roboto` font families conflict far less than `DejaVu`. You may
+want to try them. Primary issues are the 0x2639 and 0x263a characters.
+
+### Manual install on any Linux
 Install for the current user without root:
 ```sh
 # 1. Download the latest version
@@ -67,9 +85,6 @@ tar zxf EmojiOneColor-SVGinOT-Linux-1.0.tar.gz
 cd EmojiOneColor-SVGinOT-Linux-1.0
 ./install.sh
 ```
-
-*Note: This requires `Bitstream Vera` is installed and will change your
-systems default serif, sans-serif and monospace fonts.*
 
 ### Install on Ubuntu Linux
 Launchpad PPA: https://launchpad.net/~eosrei/+archive/ubuntu/fonts
@@ -90,18 +105,17 @@ AUR package: https://aur.archlinux.org/packages/emojione-color-font/
 yaourt -S emojione-color-font
 ```
 
-### Why Bitstream Vera
-The default serif, sans-serif and monospace font for most Linux distributions is
-`DejaVu`. `DejaVu` includes a wide range of symbols which override the
-`Emoji One Color` characters. The previous solution was to make
-`Emoji One Color` the default system font, but that causes a number of issues.
-A better solution is a different font that doesn't override any emoji characters
-such as `Bitstream Vera`. `Bitstream Vera` is the source of the glyphs used in
-`DejaVu`, so it's not very different.
+### Install on Gentoo Linux
+Gentoo repository: https://github.com/jorgicio/jorgicio-gentoo
 
-### Additional Default Font Options
-The `Noto` and `Roboto` font families conflict far less than `DejaVu`. You may
-want to try them. Primary issues are the 0x2639 and 0x263a characters.
+```sh
+# Install layman using Portage with USE="git" enabled, the default.
+emerge layman
+# Add the repo.
+layman -s jorgicio
+# Install the package.
+emerge emojione-color-font
+```
 
 ## Install on OS X
 There are three install options for OS X. Both SVGinOT versions are available
