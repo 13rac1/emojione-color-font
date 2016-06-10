@@ -19,12 +19,6 @@ if [ -z "$XDG_DATA_HOME" ];then
   XDG_DATA_HOME=$HOME/.local/share
 fi
 
-# Remove font from old directory if exists (temporary backwards compat)
-if [ -f $HOME/.fonts/EmojiOneColor-SVGinOT.ttf ];then
-  echo "Removing the font from $HOME/.fonts"
-  rm $HOME/.fonts/EmojiOneColor-SVGinOT.ttf
-fi
-
 # Create a user font directory
 mkdir -p $XDG_DATA_HOME/fonts
 echo "Installing the font in: $XDG_DATA_HOME/fonts/"
