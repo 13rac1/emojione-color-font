@@ -22,7 +22,6 @@ Regular B&W outline emoji are included for backwards/fallback compatibility.
 * [Install on Linux](#install-on-linux)
 * [Install on OS X](#install-on-os-x)
 * [Install on Windows](#install-on-windows)
-* [Known issues](#known-issues)
 * [Building](#building)
 * [License](#license)
 
@@ -45,10 +44,11 @@ and Open Font Format fonts. It allows font creators to embed complete SVG files
 within a font enabling full color and even animations. There are more details
 in the [SVGinOT proposal][6] and the [OpenType SVG table specifications][7].
 
-SVGinOT Demos (Firefox only):
+SVGinOT Font demos (Firefox only):
 
-* https://www.adobe.com/devnet-apps/type/svgopentype.html
 * https://hacks.mozilla.org/2014/10/svg-colors-in-opentype-fonts/
+* http://xerographer.github.io/reinebow/
+* http://xerographer.github.io/multicoloure/
 
 [6]: https://www.w3.org/2013/10/SVG_in_OpenType/
 [7]: https://www.microsoft.com/typography/otspec/svg.htm
@@ -70,9 +70,27 @@ such as `Bitstream Vera`. `Bitstream Vera` is the source of the glyphs used in
 `DejaVu`, so it's not very different. 99%+ of people will not notice the
 difference.
 
-### Additional Default Font Options
+### Additional default font options
 The `Noto` and `Roboto` font families conflict far less than `DejaVu`. You may
 want to try them. Primary issues are the 0x2639 and 0x263a characters.
+
+### Known issues
+
+* [Symbols/emoji in monospace formatted text cause incorrect character alignment][8].
+  The whitespace character widths from the most recently selected
+  fallback font are used in Pango/GTK applications.
+* [[Issue #31][9]] [Some font families are not matched correctly in Linux Firefox][10].
+  Workaround: Open `about:config` set
+  `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`.
+  [Note: May cause crashes in Firefox <48.][11]
+* [[Issue #41][12]] Martial Arts Uniform, Boxing Glove, and Drum With Drumsticks
+  only work in Chrome. They do not work in Firefox or in Linux in general.
+
+[8]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
+[9]:https://github.com/eosrei/emojione-color-font/issues/31
+[10]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
+[11]:https://bugzilla.mozilla.org/show_bug.cgi?id=1266341
+[12]:https://github.com/eosrei/emojione-color-font/issues/41
 
 ### Manual install on any Linux
 Install for the current user without root:
@@ -95,8 +113,8 @@ sudo apt-get update
 sudo apt-get install fonts-emojione-svginot
 ```
 
-Useful: [Emojione Picker for Ubuntu][8]
-[8]: https://github.com/gentakojima/emojione-picker-ubuntu
+Useful: [Emojione Picker for Ubuntu][13]
+[13]: https://github.com/gentakojima/emojione-picker-ubuntu
 
 ### Install on Arch Linux
 AUR package: https://aur.archlinux.org/packages/emojione-color-font/
@@ -125,13 +143,13 @@ from releases: https://github.com/eosrei/emojione-color-font/releases
    installs like any other font and can be specifically selected, but OS X will
    default to the `Apple Color Emoji` font for emojis.
 2. ` EmojiOneColor-SVGinOT-OSX-1.1.zip` - A hack to replace the `Apple
-   Color Emoji` font by [using the same internal name][9]. Install and accept
+   Color Emoji` font by [using the same internal name][14]. Install and accept
    the warning in Font Book.
 3. `emojione-apple.ttf` - A SBIX bitmap Apple-format EmojiOne color font is
-   [available in the emojione project][10].
+   [available in the emojione project][15].
 
-[9]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
-[10]:https://github.com/Ranks/emojione/tree/master/assets/fonts
+[14]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
+[15]:https://github.com/Ranks/emojione/tree/master/assets/fonts
 
 *Reiterating: Only FireFox supports the SVGinOT color emoji for now. Safari and
 Chrome will use the fallback black and white emoji.*
@@ -142,23 +160,9 @@ The font installs like any other font and can be specifically selected, but
 the system will default to the `Segoe UI Emoji` font. Get the current version
 from: https://github.com/eosrei/emojione-color-font/releases
 
-Help wanted: [How to override the Windows default Segoe UI Emoji font][11]
+Help wanted: [How to override the Windows default Segoe UI Emoji font][16]
 
-[11]:https://github.com/eosrei/emojione-color-font/issues/15
-
-## Known issues
-
-* [Symbols/emoji in monospace formatted text cause incorrect character
-  alignment][12]. The whitespace character widths from the most recently selected
-  fallback font are used in Pango/GTK applications.
-* [Some font families are not matched correctly in Linux Firefox <47][13].
-  Workaround: Open `about:config` set
-  `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`.
-  Fixed in Firefox 47+. [[issue #31][14]]
-
-[12]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
-[13]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
-[14]:https://github.com/eosrei/emojione-color-font/issues/31
+[16]:https://github.com/eosrei/emojione-color-font/issues/15
 
 ## Building
 Overview:
@@ -176,9 +180,9 @@ Requires:
 * FontForge 20160405+
 * SVGO
 * make
-* [SCFBuild][15] *(Created for this project!)*
+* [SCFBuild][17] *(Created for this project!)*
 
-[15]: https://github.com/eosrei/scfbuild
+[17]: https://github.com/eosrei/scfbuild
 
 Setup and build on Ubuntu 14.04 LTS:
 ```sh
