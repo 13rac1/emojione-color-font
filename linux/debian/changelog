@@ -1,3 +1,10 @@
+fonts-emojione-svginot (1.1-1) trusty; urgency=medium
+
+  * Rename "Emoji One" to "EmojiOne" to match graphics source.
+  * Update graphics adding most Unicode 9.0 emoji.
+
+ -- Brad Erickson <eosrei@gmail.com>  Thu, 09 Jun 2016 16:05:33 -0700
+
 fonts-emojione-svginot (1.0-1) trusty; urgency=medium
 
   * Initial release.
