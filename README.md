@@ -83,14 +83,11 @@ want to try them. Primary issues are the 0x2639 and 0x263a characters.
   Workaround: Open `about:config` set
   `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`.
   [Note: May cause crashes in Firefox <48.][11]
-* [[Issue #41][12]] Martial Arts Uniform, Boxing Glove, and Drum With Drumsticks
-  only work in Chrome. They do not work in Firefox or in Linux in general.
 
 [8]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
 [9]:https://github.com/eosrei/emojione-color-font/issues/31
 [10]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
 [11]:https://bugzilla.mozilla.org/show_bug.cgi?id=1266341
-[12]:https://github.com/eosrei/emojione-color-font/issues/41
 
 ### Manual install on any Linux
 Install for the current user without root:
