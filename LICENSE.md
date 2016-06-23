@@ -1,7 +1,8 @@
 # Licenses
 
-* Copyright 2016 Brad Erickson CC-BY-4.0
+* Copyright 2016 Brad Erickson CC-BY-4.0/MIT
 * Copyright 2015 Ranks.com Inc. CC-BY-4.0
+* Copyright 2013 Joe Loughry and Terence Eden MIT
 
 ## Artwork
 * Applies to SVG files and TTF font files
@@ -24,3 +25,11 @@ color glyphs. Files are stored in `assets/emojione-svg`.
 
 Please review the specific attribution requirements for commercial use of
 EmojiOne graphics: http://emojione.com/licensing/
+
+## Power Symbol License
+The SVG files from the [Unicode Power Symbol](http://unicodepowersymbol.com/)
+project have been modified to create B&W Power Symbol glyphs. Files are stored
+in `assets/svg-bw`.
+
+* Source: https://github.com/jloughry/Unicode
+* Art License: MIT

@@ -1,7 +1,7 @@
 # SCFBuild configuration file for EmojiOne Color SVGinOT
 output_file: build/EmojiOneColor-SVGinOT.ttf
 verbose: False
-glyph_svg_dir: build/svg-trace
+glyph_svg_dir: build/svg-bw
 color_svg_dir: build/svg-color
 # Translate the SVGs on import into glyphs.
 # y+150 for correct emoji-only vertical alignment.
