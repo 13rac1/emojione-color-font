@@ -32,7 +32,7 @@ WHERE python /q || (
     GOTO :ERROR
 )
 
-WHERE pip /q || (
+WHERE pip.exe /q || (
     ECHO.
     ECHO Pip.exe not found, install or add to PATH
     ECHO.
@@ -41,7 +41,7 @@ WHERE pip /q || (
 
 ECHO Ensuring the latest FontTools is installed.
 
-pip install --upgrade https://github.com/behdad/fonttools/archive/master.zip
+pip.exe install --upgrade https://github.com/behdad/fonttools/archive/master.zip
 
 WHERE ttx /q || (
     ECHO.
