@@ -1,6 +1,9 @@
 @ECHO OFF
 SETLOCAL
 
+@setlocal enableextensions
+@cd /d "%~dp0"
+
 SET MS_EMOJI_FONT_PATH="%SystemRoot%\Fonts\seguiemj.ttf"
 SET MS_FONT_PATH="%SystemRoot%\Fonts\seguisym.ttf"
 SET EMOJI_FONT_PATH="%CD%\EmojiOneColor-SVGinOT.ttf"
