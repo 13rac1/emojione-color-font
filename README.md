@@ -213,7 +213,7 @@ Setup and build on Ubuntu 14.04 LTS:
 sudo add-apt-repository ppa:fontforge/fontforge
 sudo apt-get update
 sudo apt-get install inkscape potrace npm nodejs nodejs-legacy fontforge \
-python-fontforge python-pip imagemagick git make
+python-fontforge python-pip python-yaml imagemagick git make
 sudo npm install -g svgo
 sudo pip install fonttools
 git clone https://github.com/eosrei/emojione-color-font.git
