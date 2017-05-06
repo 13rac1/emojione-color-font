@@ -10,12 +10,11 @@ if [ $RETURN -ne 0 ];then
 	# Detects if using Ubuntu or openSUSE, then install.
 	if [[ "$(. /etc/os-release; echo $NAME)" =~ "Ubuntu" ]]; then
 		sudo apt-get install ttf-bitstream-vera
-		exit 1
 	fi
 	if [[ "$(. /etc/os-release; echo $NAME)" =~ "openSUSE" ]]; then
 		sudo zypper install bitstream-vera-fonts
-		exit 1
 	fi
+	exit 1
 fi
 echo "NOTE: Changing default font family to Bitstream Vera"
 
