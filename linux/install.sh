@@ -7,8 +7,15 @@ fc-list | grep "Bitstream Vera" > /dev/null
 RETURN=$?
 if [ $RETURN -ne 0 ];then
   echo "Bitstream Vera font family not found. Please install it:"
-  echo "sudo apt-get install ttf-bitstream-vera"
-  exit 1
+	# Detects if using Ubuntu or openSUSE, then install.
+	if [[ "$(. /etc/os-release; echo $NAME)" =~ "Ubuntu" ]]; then
+		sudo apt-get install ttf-bitstream-vera
+		exit 1
+	fi
+	if [[ "$(. /etc/os-release; echo $NAME)" =~ "openSUSE" ]]; then
+		sudo zypper install bitstream-vera-fonts
+		exit 1
+	fi
 fi
 echo "NOTE: Changing default font family to Bitstream Vera"
 
