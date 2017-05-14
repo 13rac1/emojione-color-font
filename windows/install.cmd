@@ -44,7 +44,7 @@ WHERE pip.exe /q || (
 
 ECHO Ensuring the latest FontTools is installed.
 
-pip.exe install --upgrade https://github.com/behdad/fonttools/archive/master.zip
+pip.exe install --upgrade fonttools
 
 WHERE ttx /q || (
     ECHO.
