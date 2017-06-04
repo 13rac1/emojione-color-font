@@ -176,7 +176,7 @@ install script requires both [Python][16] and pip in the PATH.
 1. Download the most recent Python 3 for Windows: https://www.python.org/downloads/windows/
 2. Start the installer, select "Add Python 3.5 to PATH" and finish the install process.
 3. Download EmojiOne Color Windows package from releases:
-https://github.com/eosrei/emojione-color-font/releases/download/v1.3/EmojiOneColor-SVGinOT-1.3-Win.zip
+https://github.com/eosrei/emojione-color-font/releases/download/v1.3/EmojiOneColor-SVGinOT-Win-1.3.zip
 4. Uncompress the file.
 5. Open the new EmojiOneColor directory.
 7. Run install.cmd. *Note: This will take some time.*
