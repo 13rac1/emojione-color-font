@@ -114,10 +114,10 @@ Useful: [Emojione Picker for Ubuntu][13]
 [13]: https://github.com/gentakojima/emojione-picker-ubuntu
 
 ### Install on Arch Linux
-AUR package: https://aur.archlinux.org/packages/emojione-color-font/
+AUR package: https://aur.archlinux.org/packages/ttf-emojione-color/
 
 ```sh
-yaourt -S emojione-color-font
+yaourt -S ttf-emojione-color
 ```
 
 ### Install on Gentoo Linux
