@@ -1,11 +1,22 @@
-# EmojiOne Color SVGinOT Font
+# Project End of Life
+
+Upstream licensing has changed ([details](https://github.com/eosrei/emojione-color-font/issues/71)).
+This is the final release of this project. There will be no further updates.
+Switch to [Twitter Color Emoji SVGinOT Font](https://github.com/eosrei/twemoji-color-font)
+for Unicode 10.0 and Emoji 5.0.
+
+Thank you!
+
+## EmojiOne Color SVGinOT Font
+
 A color and B&W emoji SVGinOT font built from [EmojiOne][1] artwork with
 support for [ZWJ][2], [skin tone diversity][3] and [country flags][4].
 
-The font works in all operating systems, but will *currently* only show color
-emoji in Firefox, Thunderbird and other Mozilla Gecko-based applications. This
-is not a limitation of the font, but of the operating systems and applications.
-Regular B&W outline emoji are included for backwards/fallback compatibility.
+The font works in all operating systems, but will currently only show color
+emoji in Firefox, Thunderbird, Photoshop CC 2017, and Windows Edge V38.14393+.
+This is not a limitation of the font, but of the operating systems and
+applications. Regular B&W outline emoji are included for backwards/fallback
+compatibility.
 
 [Do you prefer Twitter Emoji for Everyone graphics?][5]
 
@@ -93,11 +104,11 @@ want to try them. Primary issues are the 0x2639 and 0x263a characters.
 Install for the current user without root:
 ```sh
 # 1. Download the latest version
-wget https://github.com/eosrei/emojione-color-font/releases/download/v1.3/EmojiOneColor-SVGinOT-Linux-1.3.tar.gz
+wget https://github.com/eosrei/emojione-color-font/releases/download/v1.4/EmojiOneColor-SVGinOT-Linux-1.4.tar.gz
 # 2. Uncompress the file
-tar zxf EmojiOneColor-SVGinOT-Linux-1.3.tar.gz
+tar zxf EmojiOneColor-SVGinOT-Linux-1.4.tar.gz
 # 3. Run the installer
-cd EmojiOneColor-SVGinOT-Linux-1.3
+cd EmojiOneColor-SVGinOT-Linux-1.4
 ./install.sh
 ```
 
@@ -136,10 +147,10 @@ emerge emojione-color-font
 There are three install options for OS X. Both SVGinOT versions are available
 from releases: https://github.com/eosrei/emojione-color-font/releases
 
-1. `EmojiOneColor-SVGinOT-1.3.zip` - The regular version of the font
+1. `EmojiOneColor-SVGinOT-1.4.zip` - The regular version of the font
    installs like any other font and can be specifically selected, but OS X will
    default to the `Apple Color Emoji` font for emojis.
-2. ` EmojiOneColor-SVGinOT-OSX-1.3.zip` - A hack to replace the `Apple
+2. ` EmojiOneColor-SVGinOT-OSX-1.4.zip` - A hack to replace the `Apple
    Color Emoji` font by [using the same internal name][14]. Install and accept
    the warning in Font Book.
 3. `emojione-apple.ttf` - A SBIX bitmap Apple-format EmojiOne color font is
@@ -161,7 +172,7 @@ from releases: https://github.com/eosrei/emojione-color-font/releases
 The regular version of the font installs like any other font and can be
 specifically selected, but Windows will default to the `Segoe UI Emoji`
 font for emoji characters. Download:
-https://github.com/eosrei/emojione-color-font/releases/download/v1.3/EmojiOneColor-SVGinOT-1.3.zip
+https://github.com/eosrei/emojione-color-font/releases/download/v1.4/EmojiOneColor-SVGinOT-1.4.zip
 
 ### Replace the default Windows emoji fonts
 
@@ -176,7 +187,7 @@ install script requires both [Python][16] and pip in the PATH.
 1. Download the most recent Python 3 for Windows: https://www.python.org/downloads/windows/
 2. Start the installer, select "Add Python 3.5 to PATH" and finish the install process.
 3. Download EmojiOne Color Windows package from releases:
-https://github.com/eosrei/emojione-color-font/releases/download/v1.3/EmojiOneColor-SVGinOT-Win-1.3.zip
+https://github.com/eosrei/emojione-color-font/releases/download/v1.4/EmojiOneColor-SVGinOT-Win-1.4.zip
 4. Uncompress the file.
 5. Open the new EmojiOneColor directory.
 7. Run install.cmd. *Note: This will take some time.*
